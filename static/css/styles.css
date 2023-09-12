@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: .89rem;
+  line-height: 1.6;
+
+}
+
+textarea{
+  resize: none;
+}
+
+main {
+  padding: 1rem 0;
+  width: 100%;
+  min-height: calc(100vh - 70px); /* Ajusta el valor según sea necesario para dejar espacio para el footer */
+}
+
+
+/* Base */
+
+.flash-container {
+  padding: 1rem 0;
+  margin-top: 70px; /* Ajusta el valor según sea necesario para separar los mensajes de la barra de navegación */
+  position: relative; /* Añade esta propiedad */
+}
+
+
+/* Recipes.html */
+
+.recipe-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.recipe-card {
+  max-width: 340px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-header {
+  background-color: #f0f0f0; 
+}
+
+.card-header button {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.card-header button:focus {
+  outline: none; 
+}
+
+
+footer{
+  margin-top: 5rem;
+  padding: 2rem 0;
+}

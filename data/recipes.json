@@ -1,0 +1,399 @@
+[
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 7,
+        "name": "Chicken Alfredo",
+        "category": "Main",
+        "difficulty": "Easy",
+        "ingredients": [
+            "8 oz fettuccine pasta",
+            "2 boneless, skinless chicken breasts",
+            "2 cups heavy cream",
+            "1 cup grated Parmesan cheese",
+            "4 cloves garlic, minced",
+            "2 tablespoons butter",
+            "Salt and black pepper to taste",
+            "Fresh parsley, chopped, for garnish"
+        ],
+        "instructions": [
+            "Cook fettuccine pasta according to package instructions. Drain and set aside.",
+            "Season chicken breasts with salt and black pepper. In a large skillet, cook chicken until no longer pink in the center. Remove and slice into thin strips.",
+            "In the same skillet, melt butter and sauté minced garlic until fragrant.",
+            "Add heavy cream and grated Parmesan cheese to the skillet. Stir until the sauce thickens.",
+            "Return sliced chicken to the skillet and cook until heated through. Season with additional salt and black pepper if needed.",
+            "Serve the chicken Alfredo sauce over cooked fettuccine pasta. Garnish with fresh chopped parsley."
+        ],
+        "image_path": "https://th.bing.com/th/id/OIP.43lmjBGUru87OoHmIKXokwAAAA?w=203&h=304&c=7&r=0&o=5&pid=1.7"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 1,
+        "name": "Guacamole",
+        "category": "Starter",
+        "difficulty": "Easy",
+        "ingredients": [
+            "2 avocados",
+            "1 onion",
+            "2 tomatoes",
+            "1/2 cup cilantro",
+            "1 lime",
+            "Salt to taste"
+        ],
+        "instructions": [
+            "Mash avocados in a bowl.",
+            "Chop onion, tomatoes, and cilantro.",
+            "Mix all ingredients with lime juice and salt.",
+            "Serve with tortilla chips."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2019/01/08/16/26/guacamole-3921525_1280.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 2,
+        "name": "Bruschetta",
+        "category": "Starter",
+        "difficulty": "Easy",
+        "ingredients": [
+            "4 slices Italian bread",
+            "2 tomatoes",
+            "2 cloves garlic",
+            "Fresh basil leaves",
+            "Extra virgin olive oil",
+            "Salt to taste"
+        ],
+        "instructions": [
+            "Toast the Italian bread slices.",
+            "Rub each slice with garlic cloves.",
+            "Top with chopped tomatoes and fresh basil.",
+            "Drizzle with olive oil and season with salt."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2020/10/01/22/39/gourmet-5619887_1280.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 3,
+        "name": "Spring Rolls",
+        "category": "Starter",
+        "difficulty": "Intermediate",
+        "ingredients": [
+            "Rice paper",
+            "Lettuce",
+            "Shrimp",
+            "Rice noodles",
+            "Mint leaves",
+            "Peanut sauce"
+        ],
+        "instructions": [
+            "Soak rice paper in warm water until soft.",
+            "Place lettuce, shrimp, rice noodles, and mint leaves on rice paper.",
+            "Roll it up and serve with peanut sauce."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2017/02/25/15/18/spring-rolls-2097978_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 4,
+        "name": "Caprese Salad",
+        "category": "Starter",
+        "difficulty": "Intermediate",
+        "ingredients": [
+            "Tomatoes",
+            "Mozzarella cheese",
+            "Fresh basil",
+            "Extra virgin olive oil",
+            "Balsamic vinegar",
+            "Salt to taste"
+        ],
+        "instructions": [
+            "Slice tomatoes and mozzarella cheese.",
+            "Layer with fresh basil leaves.",
+            "Drizzle with olive oil and balsamic vinegar.",
+            "Season with salt."
+        ],
+        "image_path": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2F3b432b41ce04c96a08d77befa42b9881a587a436"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 5,
+        "name": "Sushi",
+        "category": "Starter",
+        "difficulty": "Difficult",
+        "ingredients": [
+            "Sushi rice",
+            "Fresh fish",
+            "Nori seaweed",
+            "Avocado",
+            "Wasabi",
+            "Soy sauce"
+        ],
+        "instructions": [
+            "Cook sushi rice and prepare ingredients.",
+            "Roll sushi with nori seaweed, rice, fish, and avocado.",
+            "Serve with wasabi and soy sauce."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2017/03/02/20/53/sushi-2112350_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 6,
+        "name": "Escargot",
+        "category": "Starter",
+        "difficulty": "Difficult",
+        "ingredients": [
+            "Snails",
+            "Garlic butter",
+            "Parsley",
+            "White wine"
+        ],
+        "instructions": [
+            "Bake snails with garlic butter and white wine.",
+            "Sprinkle with parsley and serve."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2015/09/05/21/51/escargot-925593_1280.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 8,
+        "name": "Beef Stir-Fry",
+        "category": "Main",
+        "difficulty": "Easy",
+        "ingredients": [
+            "1 lb beef strips",
+            "1 bell pepper",
+            "1 onion",
+            "2 cloves garlic",
+            "Soy sauce",
+            "Vegetable oil"
+        ],
+        "instructions": [
+            "Heat vegetable oil in a pan and stir-fry beef strips until browned.",
+            "Add chopped bell pepper, onion, and garlic.",
+            "Season with soy sauce and cook until vegetables are tender.",
+            "Serve hot."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2022/03/18/15/09/dish-7076898_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 9,
+        "name": "Lasagna",
+        "category": "Main",
+        "difficulty": "Intermediate",
+        "ingredients": [
+            "Lasagna noodles",
+            "Ground beef",
+            "Ricotta cheese",
+            "Mozzarella cheese",
+            "Tomato sauce",
+            "Italian seasoning"
+        ],
+        "instructions": [
+            "Cook lasagna noodles and brown ground beef.",
+            "In a baking dish, layer noodles, ricotta cheese, ground beef, and mozzarella cheese.",
+            "Repeat layers and top with tomato sauce and Italian seasoning.",
+            "Bake until cheese is bubbly and golden."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2017/02/15/15/17/meal-2069021_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 10,
+        "name": "Salmon ",
+        "category": "Main",
+        "difficulty": "Intermediate",
+        "ingredients": [
+            "4 salmon fillets",
+            "1/4 cup butter",
+            "2 cloves garlic",
+            "Juice of 1 lemon",
+            "Fresh dill",
+            "Salt and pepper to taste"
+        ],
+        "instructions": [
+            "Season salmon fillets with salt and pepper.",
+            "In a pan, melt butter and sauté minced garlic until fragrant.",
+            "Add lemon juice and fresh dill. Cook for a few minutes.",
+            "Pan-sear salmon fillets until cooked through.",
+            "Serve with lemon butter sauce."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2016/04/06/17/45/salmon-1312372_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 11,
+        "name": "Beef Wellington",
+        "category": "Main",
+        "difficulty": "Difficult",
+        "ingredients": [
+            "Beef fillet",
+            "Puff pastry",
+            "Mushrooms",
+            "Prosciutto",
+            "Dijon mustard",
+            "Egg wash"
+        ],
+        "instructions": [
+            "Sear beef fillet until browned. Let it cool.",
+            "Spread Dijon mustard over beef fillet.",
+            "Wrap with prosciutto and mushrooms sautéed in butter.",
+            "Wrap in puff pastry and brush with egg wash.",
+            "Bake until golden brown."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2019/10/22/10/11/beef-wellington-4568239_1280.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 12,
+        "name": "Pasta Carbonara",
+        "category": "Main",
+        "difficulty": "Difficult",
+        "ingredients": [
+            "200g spaghetti",
+            "100g guanciale or pancetta, diced",
+            "2 large eggs",
+            "50g Pecorino Romano cheese, grated",
+            "Salt and black pepper to taste",
+            "Fresh parsley, chopped, for garnish"
+        ],
+        "instructions": [
+            "Cook spaghetti in a large pot of boiling salted water until al dente. Drain.",
+            "In a separate pan, cook the guanciale or pancetta until crispy. Remove from heat and set aside.",
+            "In a bowl, whisk together eggs and grated Pecorino Romano cheese. Season with salt and black pepper.",
+            "Combine the cooked spaghetti, crispy guanciale or pancetta, and the egg mixture in a bowl. Toss to combine until creamy and coated.",
+            "Garnish with fresh chopped parsley and additional cheese if desired. Serve immediately."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2015/04/08/13/13/pasta-712664_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 13,
+        "name": "Chocolate Cake",
+        "category": "Dessert",
+        "difficulty": "Easy",
+        "ingredients": [
+            "1 1/2 cups all-purpose flour",
+            "1 1/2 cups granulated sugar",
+            "3/4 cup unsweetened cocoa powder",
+            "1 1/2 tsp baking powder",
+            "1 1/2 tsp baking soda",
+            "1 tsp salt",
+            "2 eggs",
+            "1 cup milk",
+            "1/2 cup vegetable oil",
+            "2 tsp vanilla extract",
+            "1 cup boiling water",
+            "Chocolate frosting"
+        ],
+        "instructions": [
+            "Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.",
+            "In a large bowl, sift together flour, sugar, cocoa powder, baking powder, baking soda, and salt.",
+            "Add eggs, milk, vegetable oil, and vanilla extract. Beat until well combined.",
+            "Stir in boiling water until the batter is smooth. Pour into prepared pans.",
+            "Bake for 30 to 35 minutes or until a toothpick inserted into the center comes out clean.",
+            "Allow cakes to cool completely, then frost with chocolate frosting."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2019/07/28/04/56/sweets-4367937_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 14,
+        "name": "Apple Pie",
+        "category": "Dessert",
+        "difficulty": "Easy",
+        "ingredients": [
+            "Pastry dough",
+            "6 cups sliced apples",
+            "3/4 cup granulated sugar",
+            "1 tsp cinnamon",
+            "1/4 tsp nutmeg",
+            "2 tbsp butter",
+            "1 tbsp cornstarch"
+        ],
+        "instructions": [
+            "Preheat oven to 425°F (220°C). Line a pie dish with pastry dough.",
+            "In a large bowl, mix sliced apples with granulated sugar, cinnamon, nutmeg, and cornstarch.",
+            "Pour apple mixture into the pie crust. Dot with butter.",
+            "Cover with a second pie crust, seal the edges, and cut vents.",
+            "Bake for 45 to 55 minutes or until the crust is golden brown.",
+            "Let it cool before serving."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2016/09/25/21/48/apple-pie-1694715_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 15,
+        "name": "Tiramisu",
+        "category": "Dessert",
+        "difficulty": "Intermediate",
+        "ingredients": [
+            "Ladyfingers",
+            "6 egg yolks",
+            "3/4 cup granulated sugar",
+            "1 cup mascarpone cheese",
+            "1 1/2 cups strong brewed coffee",
+            "Cocoa powder",
+            "Marsala wine (optional)"
+        ],
+        "instructions": [
+            "In a heatproof bowl, whisk together egg yolks and granulated sugar. Place over a pot of simmering water and whisk until thickened.",
+            "Remove from heat and whisk in mascarpone cheese until smooth.",
+            "Dip ladyfingers in strong brewed coffee (add Marsala wine if desired) and layer in a serving dish.",
+            "Spread a layer of mascarpone mixture and repeat layers.",
+            "Chill for several hours, then dust with cocoa powder before serving."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2023/05/08/13/41/tiramisu-7978647_640.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 16,
+        "name": "Cheesecake",
+        "category": "Dessert",
+        "difficulty": "Intermediate",
+        "ingredients": [
+            "1 1/2 cups graham cracker crumbs",
+            "1/4 cup granulated sugar",
+            "1/2 cup butter",
+            "4 packages cream cheese",
+            "1 1/4 cups granulated sugar",
+            "1 tsp vanilla extract",
+            "4 eggs",
+            "1 cup sour cream",
+            "1/4 cup all-purpose flour"
+        ],
+        "instructions": [
+            "Preheat oven to 325°F (165°C). Grease and line a springform pan with parchment paper.",
+            "Mix graham cracker crumbs, sugar, and melted butter. Press into the bottom of the pan.",
+            "In a large bowl, beat cream cheese, sugar, and vanilla extract until smooth.",
+            "Add eggs one at a time, beating well with each addition. Mix in sour cream and flour.",
+            "Pour over crust and bake for 55 to 60 minutes or until the center is set.",
+            "Chill in the refrigerator before serving."
+        ],
+        "image_path": "https://www.allrecipes.com/thmb/v8JZdIICA1oerzX0L-KzyW2w9hM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8350-chantals-new-york-cheesecake-DDMFS-4x3-426569e82b4142a6a1ed01e068544245.jpg"
+    },
+    {
+        "user_id": "pedr.olivares80@gmail.com",
+        "id": 17,
+        "name": "Chocolate Chip Cookies",
+        "category": "Dessert",
+        "difficulty": "Difficult",
+        "ingredients": [
+            "2 1/4 cups all-purpose flour",
+            "1/2 tsp baking soda",
+            "1 cup butter",
+            "1/2 cup granulated sugar",
+            "1 cup packed brown sugar",
+            "1 tsp vanilla extract",
+            "2 eggs",
+            "2 cups chocolate chips"
+        ],
+        "instructions": [
+            "Preheat oven to 375°F (190°C).",
+            "In a small bowl, mix flour and baking soda; set aside.",
+            "In a large bowl, beat softened butter, granulated sugar, brown sugar, and vanilla extract until creamy.",
+            "Add eggs, one at a time, beating well after each addition. Gradually mix in the flour mixture.",
+            "Stir in chocolate chips. Drop dough by rounded tablespoons onto ungreased baking sheets.",
+            "Bake for 9 to 11 minutes or until golden brown. Cool on wire racks."
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2016/04/22/01/01/cookies-1344929_1280.jpg"
+    }
+]

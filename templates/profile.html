@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to Your Profile</h1>
+
+    <h2>Your Recipes</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Difficulty</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+                <tr id="recipe-{{ recipe.id }}">
+                    <td>{{ recipe['name'] }}</td>
+                    <td>{{ recipe['category'] }}</td>
+                    <td>{{ recipe['difficulty'] }}</td>
+                    <td>
+                        <a href="#" class="btn btn-danger delete-btn" data-recipe-id="{{ recipe.id }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add a New Recipe</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="recipe_name">Recipe Name</label>
+            <input type="text" class="form-control" id="recipe_name" name="recipe_name" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" name="category" required>
+                <option value="Starter">Starter</option>
+                <option value="Main">Main</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="difficulty">Difficulty</label>
+            <select class="form-control" id="difficulty" name="difficulty" required>
+                <option value="Easy">Easy</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Difficult">Difficult</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients</label>
+            <textarea class="form-control" id="ingredients" name="ingredients" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="instructions">Instructions</label>
+            <textarea class="form-control" id="instructions" name="instructions" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image_url">Image URL</label>
+            <input type="text" class="form-control" id="image_url" name="image_url" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Recipe</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}
