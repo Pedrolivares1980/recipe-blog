@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   categoryFilter.addEventListener("change", filterRecipes);
 
   function filterRecipes() {
-    const selectedDifficulty = difficultyFilter.value.toLowerCase(); // Convertir a minúsculas
+    const selectedDifficulty = difficultyFilter.value.toLowerCase(); 
     const selectedCategory = categoryFilter.value;
 
     const recipeCards = document.querySelectorAll(".recipe-card");
 
     recipeCards.forEach((card) => {
-      const cardDifficulty = card.getAttribute("data-difficulty").toLowerCase(); // Convertir a minúsculas
+      const cardDifficulty = card.getAttribute("data-difficulty").toLowerCase(); 
       const cardCategory = card.getAttribute("data-category");
 
       const isVisible = (

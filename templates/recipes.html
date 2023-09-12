@@ -2,93 +2,88 @@
 
 {% block content %}
 <div class="container recipe-container">
-    <h2>{{ title }}</h2>
-    <!-- Filter by Difficulty -->
-    <div class="mb-3">
-        <label for="difficulty-filter">Filter by Difficulty:</label>
-        <select id="difficulty-filter" class="form-control">
-            <option value="all">All</option>
-            <option value="easy">Easy</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="difficult">Difficult</option>
-        </select>
-    </div>
+  <h2>{{ title }}</h2>
+  <!-- Filter by Difficulty -->
+  <div class="mb-3">
+    <label for="difficulty-filter">Filter by Difficulty:</label>
+    <select id="difficulty-filter" class="form-control">
+      <option value="all">All</option>
+      <option value="easy">Easy</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="difficult">Difficult</option>
+    </select>
+  </div>
 
-    <!-- Filter by Category -->
-    <div class="mb-3">
-        <label for="category-filter">Filter by Category:</label>
-        <select id="category-filter" class="form-control">
-            <option value="all">All</option>
-            <option value="Starter">Starter</option>
-            <option value="Main">Main</option>
-            <option value="Dessert">Dessert</option>
-        </select>
-    </div>
+  <!-- Filter by Category -->
+  <div class="mb-3">
+    <label for="category-filter">Filter by Category:</label>
+    <select id="category-filter" class="form-control">
+      <option value="all">All</option>
+      <option value="Starter">Starter</option>
+      <option value="Main">Main</option>
+      <option value="Dessert">Dessert</option>
+    </select>
+  </div>
 
-    <!-- Recipe Cards -->
-    <div class="row">
-        {% for recipe in recipes %}
-        <div class="col-12 col-md-6 col-xl-4 mb-4">
-            <div class="card recipe-card" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
-                <img src="{{ recipe.image_path }}" class="card-img-top" alt="{{ recipe.name }}">
+  <!-- Recipe Cards -->
+  <div class="row">
+    {% for recipe in recipes %}
+    <div class="col-12 col-md-6 col-xl-4 mb-4">
+      <div class="card recipe-card" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
+        <img src="{{ recipe.image_path }}" class="card-img-top" alt="{{ recipe.name }}">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ recipe.name }}</h5>
+          <p class="card-text">{{ recipe.category }} | Difficulty: {{ recipe.difficulty }}</p>
+          <div class="accordion" id="accordion-{{ loop.index }}">
+            <div class="card">
+              <div class="card-header" id="heading-{{ loop.index }}">
+                <h6 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse"
+                    data-target="#collapse-{{ loop.index }}" aria-expanded="true"
+                    aria-controls="collapse-{{ loop.index }}">
+                    Ingredients
+                  </button>
+                </h6>
+              </div>
+              <div id="collapse-{{ loop.index }}" class="collapse" aria-labelledby="heading-{{ loop.index }}"
+                data-parent="#accordion-{{ loop.index }}">
                 <div class="card-body">
-                    <h5 class="card-title text-center">{{ recipe.name }}</h5>
-                    <p class="card-text">{{ recipe.category }} | Difficulty: {{ recipe.difficulty }}</p>
-                    <div class="accordion" id="accordion-{{ loop.index }}">
-                        <div class="card">
-                            <div class="card-header" id="heading-{{ loop.index }}">
-                                <h6 class="mb-0">
-                                    <button class="btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapse-{{ loop.index }}" aria-expanded="true"
-                                        aria-controls="collapse-{{ loop.index }}">
-                                        Ingredients
-                                    </button>
-                                </h6>
-                            </div>
-                            <div id="collapse-{{ loop.index }}" class="collapse"
-                                aria-labelledby="heading-{{ loop.index }}" data-parent="#accordion-{{ loop.index }}">
-                                <div class="card-body">
-                                    <ul class="list-group">
-                                        {% for ingredient in recipe.ingredients %}
-                                        <li class="list-group-item">{{ ingredient }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="heading-{{ loop.index }}-2">
-                                <h6 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse-{{ loop.index }}-2" aria-expanded="false"
-                                        aria-controls="collapse-{{ loop.index }}-2">
-                                        Instructions
-                                    </button>
-                                </h6>
-                            </div>
-                            <div id="collapse-{{ loop.index }}-2" class="collapse"
-                                aria-labelledby="heading-{{ loop.index }}-2" data-parent="#accordion-{{ loop.index }}">
-                                <div class="card-body">
-                                    <ol class="list-group">
-                                        {% for instruction in recipe.instructions %}
-                                        <li class="list-group-item">{{ instruction }}</li>
-                                        {% endfor %}
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  <ul class="list-group">
+                    {% for ingredient in recipe.ingredients %}
+                    <li class="list-group-item">{{ ingredient }}</li>
+                    {% endfor %}
+                  </ul>
                 </div>
+              </div>
             </div>
+            <div class="card">
+              <div class="card-header" id="heading-{{ loop.index }}-2">
+                <h6 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapse-{{ loop.index }}-2" aria-expanded="false"
+                    aria-controls="collapse-{{ loop.index }}-2">
+                    Instructions
+                  </button>
+                </h6>
+              </div>
+              <div id="collapse-{{ loop.index }}-2" class="collapse" aria-labelledby="heading-{{ loop.index }}-2"
+                data-parent="#accordion-{{ loop.index }}">
+                <div class="card-body">
+                  <ol class="list-group">
+                    {% for instruction in recipe.instructions %}
+                    <li class="list-group-item">{{ instruction }}</li>
+                    {% endfor %}
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        {% endfor %}
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
 <script src="{{ url_for('static', filename='js/recipe_filter.js') }}"></script>
 
 {% endblock %}
-
-
-
-
-

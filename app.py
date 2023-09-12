@@ -7,7 +7,7 @@ from functions import load_recipes, save_recipes, load_users, save_users, is_aut
 
 # Create a Flask app instance
 app = Flask(__name__, static_folder='static')
-app.secret_key = 'your_secret_key'  # Change this to a secure secret key
+app.secret_key = 'c86522f1d36832cb56a3b29716986d607ac42dfc'
 
 
 # Paths to data files
@@ -49,7 +49,7 @@ def register():
         # Save the registered users to users.json
         save_users(registered_users)
 
-        flash(('Registration successful. Please log in.', 'success'))  # Success message
+        flash(('Registration successful. Please log in.', 'success'))
         return redirect(url_for('login'))
 
     return render_template('register.html', title='Register')
@@ -105,7 +105,7 @@ def profile():
             # Create a new recipe object associated with the user's ID
             new_recipe = {
                 'user_id': user_id,
-                'id': len(recipes) + 1,  # Generate a unique recipe ID
+                'id': len(recipes) + 1,
                 'name': recipe_name,
                 'category': category,
                 'difficulty': difficulty,
@@ -120,7 +120,7 @@ def profile():
             # Save the updated recipes to recipes.json
             save_recipes(recipes)
 
-            flash(('Recipe added successfully.', 'success'))  # Success message
+            flash(('Recipe added successfully.', 'success'))
             return redirect(url_for('profile'))
 
         # Load recipes for the current user (filter by user ID)
@@ -135,7 +135,7 @@ def profile():
 def delete_recipe(recipe_id):
     user_id = session.get('user_id')
     if user_id:
-        # Load recipes from your data source (e.g., recipes.json)
+        # Load recipes from recipes.json
         recipes = load_recipes()
 
         # Find the recipe with the given recipe_id and user_id
@@ -147,17 +147,16 @@ def delete_recipe(recipe_id):
 
         if recipe_to_delete:
             recipes.remove(recipe_to_delete)
-            # Save the updated recipes back to your data source
+            # Save the updated recipes
             save_recipes(recipes)
-            # flash(('Recipe deleted successfully.', 'success'))  # Success message
             return ('', 204)  # No content, indicating successful deletion
 
         # If the recipe doesn't exist or doesn't belong to the user, return an error response
-        flash(('Recipe not found or unauthorized.', 'danger'))  # Error message
+        flash(('Recipe not found or unauthorized.', 'danger'))
         return jsonify({'error': 'Recipe not found or unauthorized'}), 404
 
     # If the user is not logged in, return an unauthorized response
-    flash(('Unauthorized.', 'danger'))  # Error message
+    flash(('Unauthorized.', 'danger'))
     return jsonify({'error': 'Unauthorized'}), 401
 
 # Route to log out
@@ -188,14 +187,10 @@ def contact():
 
         save_contact_messages(contact_messages)
 
-        flash(('Message sent successfully. We will get back to you soon.', 'success'))  # Mensaje de éxito
-        print('Flash message: Message sent successful.')
+        flash(('Message sent successfully. We will get back to you soon.', 'success'))
         return redirect(url_for('index'))
 
     return render_template('contact.html', title='Contact Us')
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
