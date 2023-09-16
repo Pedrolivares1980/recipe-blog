@@ -46,7 +46,7 @@ textarea {
   resize: none;
 }
 
-/* Base */
+/* ======================================== Base ======================================== */
 
 header{
   background-color: var(--primary-color);
@@ -54,6 +54,11 @@ header{
 
 nav{
   background-color: var(--primary-color);
+}
+
+.navbar-nav .active a {
+  color: #fff;
+  font-weight: bold;
 }
 
 
@@ -69,7 +74,59 @@ main {
   position: relative;
 }
 
-/* Footer */
+/* ======================================== Index ======================================== */
+
+
+/* Carousel */
+
+
+#index_carousel img{
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+}
+
+
+/* ======================================== Recipes.html ======================================== */
+
+.recipe-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.recipe-card {
+  max-width: 340px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-header {
+  background-color: #f0f0f0;
+}
+
+.card-header button {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.card-header button:focus {
+  outline: none;
+}
+
+/* ======================================== Footer ======================================== */
 
 .footer{
   background-color: var(--primary-color);
@@ -111,50 +168,15 @@ main {
   color: black;
 }
 
-/* Recipes.html */
 
-.recipe-container {
-  background-color: #f0f0f0;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
 
-.recipe-card {
-  max-width: 340px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.card-img-top {
-  max-height: 200px;
-  object-fit: cover;
-}
-
-.card-header {
-  background-color: #f0f0f0;
-}
-
-.card-header button {
-  width: 100%;
-  text-align: left;
-  font-weight: bold;
-}
-
-.card-header button:focus {
-  outline: none;
-}
-
+/* ======================================== Tablets ======================================== */
 
 @media(min-width:768px){
   
 
 
-  /* Footer */
+/* ======================================== Footer ======================================== */
   
 
   .footer_container{
@@ -162,6 +184,8 @@ main {
     border-radius: .5rem;
   }
 }
+
+/* ======================================== Desktop ======================================== */
 
 @media(min-width:1024px){
   

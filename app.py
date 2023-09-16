@@ -2,7 +2,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import os
 import bcrypt
-import json
 from functions import load_recipes, save_recipes, load_users, save_users, is_authenticated, load_contact_messages, save_contact_messages
 
 # Create a Flask app instance
@@ -120,7 +119,7 @@ def profile():
             # Save the updated recipes to recipes.json
             save_recipes(recipes)
 
-            flash(('Recipe added successfully.', 'success'))
+            flash(('Recipe added successfully. Thank you for sharing.', 'success'))
             return redirect(url_for('profile'))
 
         # Load recipes for the current user (filter by user ID)
@@ -163,7 +162,7 @@ def delete_recipe(recipe_id):
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
-    flash(('You have logged out.', 'success'))
+    flash(('You have logged out. Please come back soon.', 'success'))
     return redirect(url_for('index'))
 
 
@@ -187,7 +186,7 @@ def contact():
 
         save_contact_messages(contact_messages)
 
-        flash(('Message sent successfully. We will get back to you soon.', 'success'))
+        flash(('Message sent successfully. We will get back to you soon. Thank you.', 'success'))
         return redirect(url_for('index'))
 
     return render_template('contact.html', title='Contact Us')

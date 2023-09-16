@@ -395,5 +395,39 @@
             "Bake for 9 to 11 minutes or until golden brown. Cool on wire racks."
         ],
         "image_path": "https://cdn.pixabay.com/photo/2016/04/22/01/01/cookies-1344929_1280.jpg"
+    },
+    {
+        "user_id": "papa@papa.com",
+        "id": 18,
+        "name": "prueba",
+        "category": "Starter",
+        "difficulty": "Easy",
+        "ingredients": [
+            "prueba,\r",
+            "prueba1,\r",
+            "prueba2,"
+        ],
+        "instructions": [
+            "prueba"
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2015/07/22/14/23/kamikaze-855666_640.jpg"
+    },
+    {
+        "user_id": "papa@papa.com",
+        "id": 19,
+        "name": "prueba2",
+        "category": "Starter",
+        "difficulty": "Easy",
+        "ingredients": [
+            "prueba,\r",
+            "prueba\r",
+            "prueba"
+        ],
+        "instructions": [
+            "prueba\r",
+            "prueba\r",
+            "prueba"
+        ],
+        "image_path": "https://cdn.pixabay.com/photo/2015/07/08/23/26/screwdriver-837046_640.jpg"
     }
 ]
