@@ -1,3 +1,6 @@
+/* Google fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +10,6 @@
 :root{
   --primary-color: #D9A404;
   --secondary-color: #BFBAA8;
-  --container-color: #D9AD5B;
-  --dark-color: #A65D03;
-  --light-color: #D9A87E;
 }
 
 html{
@@ -126,6 +126,17 @@ main {
   outline: none;
 }
 
+/* ======================================= Contact ======================================== */
+
+.contact_img{
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+  margin: 0 auto;
+}
+
+
 /* ======================================== Footer ======================================== */
 
 .footer{
@@ -147,10 +158,15 @@ main {
   margin-bottom: 1rem;
 }
 
-.footer_link{
+.footer_social a i{
+  margin: 0 auto;
+}
+
+.facebook, .twitter, .github, .linkedin{
   display: inline-flex;
   background-color: var(--secondary-color);
   color: black;
+  width: 3rem;
   font-size: 1.1rem;
   border-radius: 50%;
   padding: .4rem;
@@ -158,8 +174,18 @@ main {
   transition: .3s;
 }
 
-.footer_link:hover{
-  background-color: var(--dark-color);
+.facebook:hover{
+  background-color: #3b5998;
+  color: white;
+}
+
+.github:hover, .twitter:hover{
+  background-color: black;
+  color: white;
+}
+
+.linkedin:hover{
+  background-color: #0e76a8;
   color: white;
 }
 
@@ -170,14 +196,13 @@ main {
 
 
 
-/* ======================================== Tablets ======================================== */
+/* ============================================================================ Tablets ============================================================================ */
 
 @media(min-width:768px){
   
 
 
 /* ======================================== Footer ======================================== */
-  
 
   .footer_container{
     padding: 1rem 0;
@@ -185,11 +210,9 @@ main {
   }
 }
 
-/* ======================================== Desktop ======================================== */
+/* ============================================================================ Desktop ============================================================================ */
 
 @media(min-width:1024px){
-  
-  
 
   .bd-grid{
     margin-left: auto;

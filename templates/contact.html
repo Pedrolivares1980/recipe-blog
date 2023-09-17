@@ -2,19 +2,19 @@
 
 {% block content %}
 <div class="container">
-  <h2 class="mb-5 text-center fs-1 fw-bolder" >{{ title }}</h2>
+  <h2><img class="contact_img" src="{{ url_for('static', filename='img/contact.webp') }}" alt=""></h2>
 
   <form method="POST" action="{{ url_for('contact') }}">
     <div class="form-group mb-3">
-      <label for="name">Name:</label>
+      <label class="fw-semibold" for="name">Name:</label>
       <input type="text" class="form-control" id="name" name="name" required placeholder="Your name here">
     </div>
     <div class="form-group mb-3">
-      <label for="email">Email Address:</label>
+      <label class="fw-semibold" for="email">Email Address:</label>
       <input type="email" class="form-control" id="email" name="email" required placeholder="example@example.com">
     </div>
     <div class="form-group mb-3">
-      <label for="comment">Comment:</label>
+      <label class="fw-semibold" for="comment">Comment:</label>
       <textarea class="form-control" id="comment" name="comment" rows="4" required placeholder="Your comment here"></textarea>
     </div>
     <div class="container col-3 mx-auto">
@@ -23,9 +23,9 @@
   </form>
   <div class="container mt-2">
     <h3 class="text-center fs-2 fw-bold mb-3">Keep in Contact</h3>
-    <p>Get in touch with us, leave us a message about any suggestions to improve our site or tell us what you think.</p>
-    <p>We will contact you as soon as possible, our first goal is that the website belongs to everyone and for everyone.</p>
-    <p>Thank you very much for your contribution.</p>
+    <p class="text-center">Get in touch with us, leave us a message about any suggestions to improve our site or tell us what you think.</p>
+    <p class="text-center">We will answer you as soon as possible.</p>
+    <p class="text-center">Thank you very much for your contribution.</p>
   </div>
 </div>
 {% endblock %}
