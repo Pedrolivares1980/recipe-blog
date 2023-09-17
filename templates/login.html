@@ -4,8 +4,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <h2 class="text-center fs-2 fw-bolder mb-3">Login</h2>
-      <div class="login_image mb-3">
+      <h2 class="text-center fs-2 fw-bolder mb-3 mb-md-5">Login</h2>
+      <div class="login_image mb-3 mb-md-5">
         <img class="border border-opacity-25 rounded-4" src="{{ url_for('static', filename='img/italian.webp') }}" alt="Login Image">
       </div>
       <form method="POST">
@@ -17,11 +17,12 @@
           <label class="fw-semibold" for="password">Password:</label>
           <input type="password" class="form-control" id="password" name="password" required placeholder="**********">
         </div>
-        <div class="container col-3 mx-auto mt-3">
+        <div class="container col-3 mx-auto mt-3 mt-md-5">
           <button type="submit" class="btn btn-primary mb-3">Login</button>
         </div>
       </form>
-      <p class="mt-3 text-center fw-semibold">Don't have an account yet? <a href="{{ url_for('register') }}">Register now</a></p>
+      <p class="mt-3 mt-md-5 text-center fw-semibold">Don't have an account yet? <a href="{{ url_for('register') }}">Register now</a></p>
+      <p class="mt-3 mt-md-5 text-center">Login to access your profile and add or delete your recipes.</p>
     </div>
   </div>
 </div>

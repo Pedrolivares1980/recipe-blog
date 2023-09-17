@@ -1,5 +1,5 @@
 /* Google fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap');
 
 * {
   margin: 0;
@@ -7,12 +7,12 @@
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --primary-color: #D9A404;
   --secondary-color: #BFBAA8;
 }
 
-html{
+html, body {
   scroll-behavior: smooth;
 }
 
@@ -23,17 +23,17 @@ body {
   background-color: var(--secondary-color);
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.section{
+.section {
   padding: 1rem;
 }
 
-.bd-grid{
+.bd-grid {
   max-width: 1024px;
   display: grid;
   grid-template-columns: 100%;
@@ -48,12 +48,18 @@ textarea {
 
 /* ======================================== Base ======================================== */
 
-header{
-  background-color: var(--primary-color);
+.navbar {
+  background-color: rgba(217, 164, 4, 0.6);
+  width: 100%;
 }
 
-nav{
-  background-color: var(--primary-color);
+.navbar.navbar-scroll {
+  background-color: rgba(217, 164, 4, 1);
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.navbar.navbar-scroll.navbar-dark .navbar-nav .nav-link {
+  color: #333; /* Cambia el color de los enlaces en la barra de navegación */
 }
 
 .navbar-nav .active a {
@@ -65,7 +71,6 @@ nav{
 main {
   padding: 1rem 0;
   width: 100%;
-  min-height: calc(100vh - 70px);
 }
 
 .flash-container {
@@ -74,14 +79,57 @@ main {
   position: relative;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+.scroll-to-top i {
+  font-size: 24px;
+}
+
 /* ======================================== Index ======================================== */
 
+
+.index_h1{
+  width: 235px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
 
 /* Carousel */
 
 
-#index_carousel img{
-  max-height: 500px;
+#index_carousel img {
+  max-height: 700px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+}
+
+/* Data */
+
+.index_data {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.index_data img {
+  max-height: 400px;
+  margin: 0 auto;
   object-fit: cover;
   object-position: center;
   border-radius: 5%;
@@ -128,7 +176,7 @@ main {
 
 /* ======================================= Contact ======================================== */
 
-.contact_img{
+.contact_img {
   height: 300px;
   object-fit: cover;
   object-position: center;
@@ -139,30 +187,33 @@ main {
 
 /* ======================================== Footer ======================================== */
 
-.footer{
+.footer {
   background-color: var(--primary-color);
   color: black;
   text-align: center;
 }
 
-.footer_title{
+.footer_title {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.footer_description{
+.footer_description {
   margin-bottom: .7rem;
 }
 
-.footer_social{
+.footer_social {
   margin-bottom: 1rem;
 }
 
-.footer_social a i{
+.footer_social a i {
   margin: 0 auto;
 }
 
-.facebook, .twitter, .github, .linkedin{
+.facebook,
+.twitter,
+.github,
+.linkedin {
   display: inline-flex;
   background-color: var(--secondary-color);
   color: black;
@@ -174,22 +225,23 @@ main {
   transition: .3s;
 }
 
-.facebook:hover{
+.facebook:hover {
   background-color: #3b5998;
   color: white;
 }
 
-.github:hover, .twitter:hover{
+.github:hover,
+.twitter:hover {
   background-color: black;
   color: white;
 }
 
-.linkedin:hover{
+.linkedin:hover {
   background-color: #0e76a8;
   color: white;
 }
 
-.footer_copy{
+.footer_copy {
   font-size: .813rem;
   color: black;
 }
@@ -198,13 +250,40 @@ main {
 
 /* ============================================================================ Tablets ============================================================================ */
 
-@media(min-width:768px){
-  
+@media(min-width:768px) {
 
+  body {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
 
-/* ======================================== Footer ======================================== */
+  /* ======================================== Index ======================================== */
 
-  .footer_container{
+  .index_h1{
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  /* Carousel */
+
+  #index_carousel img {
+    max-height: 850px;
+  }
+
+  .index_data img {
+    max-height: 600px;
+  }
+
+  /* ======================================== Contact ======================================== */
+
+  .contact_form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ======================================== Footer ======================================== */
+
+  .footer_container {
     padding: 1rem 0;
     border-radius: .5rem;
   }
@@ -212,10 +291,33 @@ main {
 
 /* ============================================================================ Desktop ============================================================================ */
 
-@media(min-width:1024px){
+@media(min-width:1024px) {
 
-  .bd-grid{
+  .bd-grid {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  body {
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+
+  /* ======================================== Index ======================================== */
+
+  .index_h1{
+    font-size: 4rem;
+  }
+
+  /* Carousel */
+
+  #index_carousel img {
+    max-height: 1100px;
+  }
+
+  /* Data */
+
+  .index_data img {
+    max-height: 800px;
   }
 }

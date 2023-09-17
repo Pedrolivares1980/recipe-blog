@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="jumbotron" id="index-main">
-  <h1 class="text-center mb-5 fs-1 fw-bolder">Welcome <br> to <br> RecBook</h1>
+  <h1 class="text-center mb-5 fw-bolder index_h1">Welcome to <span class="text-primary fw-bolder">RecBook</span></h1>
   <p class="mb-4 text-center fw-semibold">Discover and share a world of delicious recipes from around the globe in our Recipe Blog!</p>
 </div>
 
@@ -36,17 +36,17 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container index_data">
 
   <h2 class="text-center mb-3 fw-bold">What You Can Enjoy Here</h2>
   <p>Join and enjoy our gastronomic community. This is a space to share our most precious recipes with the members of our community in order to spread and share the secrets of our cultures.</p>
-  <img class="mb-3 border border-opacity-25 rounded-4" src="{{ url_for('static', filename='img/fish.webp') }}" alt="">
+  <img class="mb-3 border border-opacity-25" src="{{ url_for('static', filename='img/fish.webp') }}" alt="">
   <p>Explore our collection of recipes, each carefully crafted with step-by-step instructions and a list of ingredients.
     Whether you're looking for a quick and easy meal or a gourmet delight, you'll find it here.</p>
-    <img class="mb-3 border border-opacity-25 rounded-4" src="{{ url_for('static', filename='img/tiramisu.webp') }}" alt="">
+    <img class="mb-3 border border-opacity-25" src="{{ url_for('static', filename='img/tiramisu.webp') }}" alt="">
   <p>Feel free to share your own favorite recipes with the community. Our "Add Recipe" feature allows you to contribute
     to our ever-growing recipe library.</p>
-    <img class="mb-3 border border-opacity-25 rounded-4" src="{{ url_for('static', filename='img/food.webp') }}" alt="">
+    <img class="mb-3 border border-opacity-25" src="{{ url_for('static', filename='img/food.webp') }}" alt="">
   <p>If you have any questions or want to get in touch with us, use the "Contact" page to send us a message. We'd love
     to hear from you!</p>
 </div>
