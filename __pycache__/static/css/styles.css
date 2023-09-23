@@ -1,0 +1,348 @@
+/* Import Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap');
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom CSS variables */
+:root {
+  --primary-color: #D9A404;
+  --secondary-color: #BFBAA8;
+  --blue-color: #0d6efd;
+  --blue-color-ligth: #337ff1b0;
+}
+
+/* General styles for the body */
+html, body {
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-size: 0.89rem;
+  line-height: 1.6;
+  background-color: var(--secondary-color);
+}
+
+/* Scroll bar */
+
+::-webkit-scrollbar{
+  width: 0.8rem;
+  border-radius: .5rem;
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color:  var(--blue-color-ligth);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--blue-color);
+}
+
+/* Styles for images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Section container */
+.section {
+  padding: 1rem;
+}
+
+/* Base grid */
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+}
+
+/* Styles for textarea */
+textarea {
+  resize: none;
+}
+
+/* Profile and index containers */
+.profile_container, .index_container {
+  max-width: 900px;
+}
+
+/* Navigation bar */
+.navbar {
+  background-color: rgba(217, 164, 4, 0.6);
+  width: 100%;
+}
+
+/* Transparent navigation bar on scroll */
+.navbar.navbar-scroll {
+  background-color: rgba(217, 164, 4, 1);
+  transition: all 0.3s ease;
+}
+
+/* Link colors in the navbar */
+.navbar.navbar-scroll.navbar-dark .navbar-nav .nav-link {
+  color: #333;
+}
+
+.navbar.navbar-scroll.navbar-dark .navbar-nav .nav-link:hover {
+  color: white;
+}
+
+/* Active link in the navbar */
+.navbar-nav .active a {
+  background-color: var(--blue-color);
+  border-radius: 30%;
+  color: black;
+  font-weight: bolder;
+}
+
+.nav-link:hover{
+  color:white
+}
+
+/* Main content */
+main {
+  padding: 1rem 0;
+  width: 100%;
+}
+
+/* Flash message container */
+.flash-container {
+  padding: 1rem 0;
+  margin-top: 70px;
+  position: relative;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color:var(--blue-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  display: none;
+  transition: all .3s ease;
+}
+
+/* Scroll to top button hover effect */
+.scroll-to-top:hover {
+  transform: translateY(-1rem);
+}
+
+.scroll-to-top i {
+  font-size: 24px;
+}
+
+/* ======================================== Index ======================================== */
+
+.index_h1 {
+  width: 235px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+/* Carousel */
+#index_carousel img {
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+}
+
+/* Data */
+.index_data {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.index_data img {
+  max-height: 300px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+}
+
+/* ======================================== Recipes.html ======================================== */
+
+.recipe-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.recipe-card {
+  max-width: 340px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-header {
+  background-color: #f0f0f0;
+}
+
+.card-header button {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.card-header button:focus {
+  outline: none;
+}
+
+/* Contact */
+.contact_img {
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+  margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: black;
+  text-align: center;
+}
+
+.footer_title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer_description {
+  margin-bottom: 0.7rem;
+}
+
+.footer_social {
+  margin-bottom: 1rem;
+}
+
+.footer_social a i {
+  margin: 0 auto;
+}
+
+.facebook, .twitter, .github, .linkedin {
+  display: inline-flex;
+  background-color: var(--secondary-color);
+  color: black;
+  width: 3rem;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  padding: 0.4rem;
+  margin: 0 0.5rem;
+  transition: 0.3s;
+}
+
+.facebook:hover {
+  background-color: #3b5998;
+  color: white;
+}
+
+.github:hover, .twitter:hover {
+  background-color: black;
+  color: white;
+}
+
+.linkedin:hover {
+  background-color: #0e76a8;
+  color: white;
+}
+
+.footer_copy {
+  font-size: 0.813rem;
+  color: black;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .index_h1 {
+    width: 100%;
+    font-size: 3rem;
+  }
+
+  /* Carousel styles */
+  #index_carousel img {
+    max-height: 600px;
+  }
+
+  /* Data styles */
+  .index_data img {
+    max-height: 400px;
+  }
+
+  /* Contact styles */
+  .contact_form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Footer styles */
+  .footer_container {
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body {
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+
+  /* Index styles */
+  .index_h1 {
+    font-size: 4rem;
+  }
+
+  /* Carousel styles */
+  #index_carousel img {
+    max-width: 900px;
+    max-height: 900px;
+    margin: 0 auto;
+  }
+
+  /* Data styles */
+  .index_data img {
+    max-height: 600px;
+  }
+}

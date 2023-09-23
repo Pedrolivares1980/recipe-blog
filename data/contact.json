@@ -1,3 +1,7 @@
 [
-    
+    {
+        "name": "example",
+        "email": "example@example.com",
+        "comment": "example"
+    }
 ]

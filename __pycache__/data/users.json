@@ -1,0 +1,20 @@
+{
+    "papa@papa.com": {
+        "user_id": 1,
+        "name": "papa",
+        "email": "papa@papa.com",
+        "password": "$2b$12$I9dsCPf8/ezgxE63ufqWzu1V7f9ZmWkqz6KkvvxpD4STz04td4wfS"
+    },
+    "pedr.olivares80@gmail.com": {
+        "user_id": 5,
+        "name": "Pedro",
+        "email": "pedr.olivares80@gmail.com",
+        "password": "$2b$12$bDjzSc5wynDSICUrxEWkF.0CgiV8AeHvHgg5YhRV2mKkX.WYFka16"
+    },
+    "test@test.com": {
+        "user_id": 3,
+        "name": "test",
+        "email": "test@test.com",
+        "password": "$2b$12$WhlRi2HHuKyXNP9Ult5mIucPa4axIcaLQN2etS3rXLdLPtQeazE5y"
+    }
+}
