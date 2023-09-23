@@ -1,8 +1,9 @@
-# Import necessary modules and functions
+# Import and functions from functions.py
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import os
 import bcrypt
 from functions import load_recipes, save_recipes, load_users, save_users, is_authenticated, load_contact_messages, save_contact_messages
+
 
 # Create a Flask app instance
 app = Flask(__name__, static_folder='static')
@@ -14,8 +15,10 @@ recipes_file_path = os.path.join(app.root_path, 'data', 'recipes.json')
 contact_file_path = os.path.join(app.root_path, 'data', 'contact.json')
 users_file_path = os.path.join(app.root_path, 'data', 'users.json')
 
+
 # Add 'is_authenticated' to the global Jinja2 context
 app.jinja_env.globals.update(is_authenticated=is_authenticated)
+
 
 # Route to register a new user
 @app.route('/register', methods=['GET', 'POST'])
@@ -53,11 +56,13 @@ def register():
 
     return render_template('register.html', title='Register')
 
-# Route for the home page
+
+# Route for home page
 @app.route('/')
 @app.route('/home')
 def index():
     return render_template('index.html', title='Home')
+
 
 # Route to log in
 @app.route('/login', methods=['GET', 'POST'])
@@ -78,11 +83,13 @@ def login():
 
     return render_template('login.html', title='Login')
 
-# Route for the recipes page
+
+# Route for  recipes page
 @app.route('/recipes')
 def recipes():
     recipes = load_recipes()
     return render_template('recipes.html', title='Recipes', recipes=recipes)
+
 
 # Route to add a new recipe in the profile
 @app.route('/profile', methods=['GET', 'POST'])
@@ -129,6 +136,7 @@ def profile():
     flash(('You must log in to access your profile.', 'danger'))
     return redirect(url_for('login'))
 
+
 # Route to delete a recipe
 @app.route('/delete_recipe/<int:recipe_id>', methods=['DELETE'])
 def delete_recipe(recipe_id):
@@ -148,7 +156,7 @@ def delete_recipe(recipe_id):
             recipes.remove(recipe_to_delete)
             # Save the updated recipes
             save_recipes(recipes)
-            return ('', 204)  # No content, indicating successful deletion
+            return ('', 204)  # Indicating successful deletion
 
         # If the recipe doesn't exist or doesn't belong to the user, return an error response
         flash(('Recipe not found or unauthorized.', 'danger'))
@@ -157,6 +165,7 @@ def delete_recipe(recipe_id):
     # If the user is not logged in, return an unauthorized response
     flash(('Unauthorized.', 'danger'))
     return jsonify({'error': 'Unauthorized'}), 401
+
 
 # Route to log out
 @app.route('/logout')
@@ -190,6 +199,7 @@ def contact():
         return redirect(url_for('index'))
 
     return render_template('contact.html', title='Contact Us')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
