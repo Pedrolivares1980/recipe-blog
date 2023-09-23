@@ -1,90 +1,132 @@
-/* Google fonts */
+/* Import Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap');
 
+/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Custom CSS variables */
 :root {
   --primary-color: #D9A404;
   --secondary-color: #BFBAA8;
+  --blue-color: #0d6efd;
+  --blue-color-ligth: #337ff1b0;
 }
 
+/* General styles for the body */
 html, body {
   scroll-behavior: smooth;
-}
-
-body {
   font-family: 'Montserrat', 'Poppins', sans-serif;
-  font-size: .89rem;
+  font-size: 0.89rem;
   line-height: 1.6;
   background-color: var(--secondary-color);
 }
 
+/* Scroll bar */
+
+::-webkit-scrollbar{
+  width: 0.8rem;
+  border-radius: .5rem;
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color:  var(--blue-color-ligth);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--blue-color);
+}
+
+/* Styles for images */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Section container */
 .section {
   padding: 1rem;
 }
 
+/* Base grid */
 .bd-grid {
   max-width: 1024px;
   display: grid;
   grid-template-columns: 100%;
   column-gap: 2rem;
-  width: calc(100%-2rem);
+  width: calc(100% - 2rem);
   margin: 0 1rem;
 }
 
+/* Styles for textarea */
 textarea {
   resize: none;
 }
 
-/* ======================================== Base ======================================== */
+/* Profile and index containers */
+.profile_container, .index_container {
+  max-width: 900px;
+}
 
+/* Navigation bar */
 .navbar {
   background-color: rgba(217, 164, 4, 0.6);
   width: 100%;
 }
 
+/* Transparent navigation bar on scroll */
 .navbar.navbar-scroll {
   background-color: rgba(217, 164, 4, 1);
-  transition: background-color 0.3s ease; /* Transición suave */
+  transition: all 0.3s ease;
 }
 
+/* Link colors in the navbar */
 .navbar.navbar-scroll.navbar-dark .navbar-nav .nav-link {
-  color: #333; /* Cambia el color de los enlaces en la barra de navegación */
+  color: #333;
 }
 
+.navbar.navbar-scroll.navbar-dark .navbar-nav .nav-link:hover {
+  color: white;
+}
+
+/* Active link in the navbar */
 .navbar-nav .active a {
-  color: #fff;
-  font-weight: bold;
+  background-color: var(--blue-color);
+  border-radius: 30%;
+  color: black;
+  font-weight: bolder;
 }
 
+.nav-link:hover{
+  color:white
+}
 
+/* Main content */
 main {
   padding: 1rem 0;
   width: 100%;
 }
 
+/* Flash message container */
 .flash-container {
   padding: 1rem 0;
   margin-top: 70px;
   position: relative;
 }
 
+/* Scroll to top button */
 .scroll-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--primary-color);
+  color:var(--blue-color);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -92,6 +134,12 @@ main {
   line-height: 40px;
   cursor: pointer;
   display: none;
+  transition: all .3s ease;
+}
+
+/* Scroll to top button hover effect */
+.scroll-to-top:hover {
+  transform: translateY(-1rem);
 }
 
 .scroll-to-top i {
@@ -100,8 +148,7 @@ main {
 
 /* ======================================== Index ======================================== */
 
-
-.index_h1{
+.index_h1 {
   width: 235px;
   font-size: 2.5rem;
   text-align: center;
@@ -110,17 +157,14 @@ main {
 }
 
 /* Carousel */
-
-
 #index_carousel img {
-  max-height: 700px;
+  max-height: 500px;
   object-fit: cover;
   object-position: center;
   border-radius: 5%;
 }
 
 /* Data */
-
 .index_data {
   margin: 0 auto;
   max-width: 1200px;
@@ -128,13 +172,12 @@ main {
 }
 
 .index_data img {
-  max-height: 400px;
+  max-height: 300px;
   margin: 0 auto;
   object-fit: cover;
   object-position: center;
   border-radius: 5%;
 }
-
 
 /* ======================================== Recipes.html ======================================== */
 
@@ -174,8 +217,7 @@ main {
   outline: none;
 }
 
-/* ======================================= Contact ======================================== */
-
+/* Contact */
 .contact_img {
   height: 300px;
   object-fit: cover;
@@ -184,9 +226,7 @@ main {
   margin: 0 auto;
 }
 
-
-/* ======================================== Footer ======================================== */
-
+/* Footer */
 .footer {
   background-color: var(--primary-color);
   color: black;
@@ -199,7 +239,7 @@ main {
 }
 
 .footer_description {
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 
 .footer_social {
@@ -210,19 +250,16 @@ main {
   margin: 0 auto;
 }
 
-.facebook,
-.twitter,
-.github,
-.linkedin {
+.facebook, .twitter, .github, .linkedin {
   display: inline-flex;
   background-color: var(--secondary-color);
   color: black;
   width: 3rem;
   font-size: 1.1rem;
   border-radius: 50%;
-  padding: .4rem;
-  margin: 0 .5rem;
-  transition: .3s;
+  padding: 0.4rem;
+  margin: 0 0.5rem;
+  transition: 0.3s;
 }
 
 .facebook:hover {
@@ -230,8 +267,7 @@ main {
   color: white;
 }
 
-.github:hover,
-.twitter:hover {
+.github:hover, .twitter:hover {
   background-color: black;
   color: white;
 }
@@ -242,57 +278,47 @@ main {
 }
 
 .footer_copy {
-  font-size: .813rem;
+  font-size: 0.813rem;
   color: black;
 }
 
-
-
-/* ============================================================================ Tablets ============================================================================ */
-
-@media(min-width:768px) {
-
+/* Tablets */
+@media (min-width: 768px) {
   body {
     font-size: 1rem;
     line-height: 1.9;
   }
 
-  /* ======================================== Index ======================================== */
-
-  .index_h1{
+  .index_h1 {
     width: 100%;
     font-size: 3rem;
   }
 
-  /* Carousel */
-
+  /* Carousel styles */
   #index_carousel img {
-    max-height: 850px;
-  }
-
-  .index_data img {
     max-height: 600px;
   }
 
-  /* ======================================== Contact ======================================== */
+  /* Data styles */
+  .index_data img {
+    max-height: 400px;
+  }
 
+  /* Contact styles */
   .contact_form {
     max-width: 500px;
     margin: 0 auto;
   }
 
-  /* ======================================== Footer ======================================== */
-
+  /* Footer styles */
   .footer_container {
     padding: 1rem 0;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
   }
 }
 
-/* ============================================================================ Desktop ============================================================================ */
-
-@media(min-width:1024px) {
-
+/* Desktop */
+@media (min-width: 1024px) {
   .bd-grid {
     margin-left: auto;
     margin-right: auto;
@@ -303,21 +329,20 @@ main {
     line-height: 2;
   }
 
-  /* ======================================== Index ======================================== */
-
-  .index_h1{
+  /* Index styles */
+  .index_h1 {
     font-size: 4rem;
   }
 
-  /* Carousel */
-
+  /* Carousel styles */
   #index_carousel img {
-    max-height: 1100px;
+    max-width: 900px;
+    max-height: 900px;
+    margin: 0 auto;
   }
 
-  /* Data */
-
+  /* Data styles */
   .index_data img {
-    max-height: 800px;
+    max-height: 600px;
   }
 }

@@ -2,7 +2,9 @@
 
 {% block content %}
 <div class="container recipe-container">
+  <!-- Page Heading -->
   <h2 class="text-center fs-1 fw-bolder mb-3">Recipes</h2>
+
   <!-- Filter by Difficulty -->
   <div class="mb-3">
     <label class="mb-2" for="difficulty-filter">Filter by Difficulty:</label>
@@ -35,6 +37,7 @@
           <h5 class="card-title text-center">{{ recipe.name }}</h5>
           <p class="card-text text-center">Category: {{ recipe.category }} <br> Difficulty: {{ recipe.difficulty }}</p>
           <div class="accordion accordion-flush" id="accordion-{{ loop.index }}">
+            <!-- Ingredients Accordion -->
             <div class="card">
               <div class="card-header" id="heading-{{ loop.index }}">
                 <h6 class="mb-0">
@@ -56,6 +59,7 @@
                 </div>
               </div>
             </div>
+            <!-- Instructions Accordion -->
             <div class="card mt-2">
               <div class="card-header" id="heading-{{ loop.index }}-2">
                 <h6 class="mb-0">
@@ -85,7 +89,7 @@
   </div>
 </div>
 
-
+<!-- JavaScript for Recipe Filtering -->
 <script src="{{ url_for('static', filename='js/recipe_filter.js') }}"></script>
 
 {% endblock %}

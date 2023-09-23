@@ -1,61 +1,56 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const deleteButtons = document.querySelectorAll(".delete-btn");
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all delete buttons for recipes
+  const deleteButtons = document.querySelectorAll('.delete-btn');
 
-  // Function to display a flash message
-  function flashMessage(message, type) {
-    const flashDiv = document.createElement("div");
-    flashDiv.className = `alert alert-${type} alert-dismissible flash-message`;
-    flashDiv.innerHTML = `
-      <div class="container">
-        <ul class="list-unstyled">
-          <li class="text-center">
-            ${message}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    `;
-
-    const flashContainer = document.querySelector(".flash-messages");
-    flashContainer.appendChild(flashDiv);
-
-    // Event listener to manually close the flash message
-    flashDiv.querySelector(".close").addEventListener("click", () => {
-      flashDiv.remove();
-    });
-  }
-
+  // Add a click event listener to each delete button
   deleteButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      const recipeId = this.getAttribute("data-recipe-id");
+    button.addEventListener('click', function () {
+      // Get the recipe ID from the data attribute
+      const recipeId = this.getAttribute('data-recipe-id');
 
-      const confirmed = confirm("Are you sure you want to delete this recipe?");
-
-      if (confirmed) {
-        fetch(`/delete_recipe/${recipeId}`, {
-          method: "DELETE",
-        })
-          .then((response) => {
-            if (response.status === 204) {
-              const row = document.getElementById(`recipe-${recipeId}`);
-              if (row) {
-                row.style.display = "none";
-              }
-
-              flashMessage("Recipe deleted successfully.", "success");
-            } else if (response.status === 401) {
-              flashMessage("Unauthorized.", "danger");
-            } else if (response.status === 404) {
-              flashMessage("Recipe not found or unauthorized.", "danger");
+      // Send a DELETE request to the server
+      fetch(`/delete_recipe/${recipeId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === 'success') {
+            // Successful deletion, display a success flash message
+            const flashContainer = document.querySelector('.flash-messages');
+            if (flashContainer) {
+              flashContainer.innerHTML = `
+                <div class="alert alert-success alert-dismissible text-center">
+                  ${data.message}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              `;
             }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-      }
+
+            // Hide the row of the deleted recipe
+            const recipeRow = document.getElementById(`recipe-${recipeId}`);
+            if (recipeRow) {
+              recipeRow.remove();
+            }
+          } else {
+            // Display an error flash message if needed
+            const flashContainer = document.querySelector('.flash-messages');
+            if (flashContainer) {
+              flashContainer.innerHTML = `
+                <div class="alert alert-danger alert-dismissible text-center">
+                  ${data.message}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              `;
+            }
+          }
+        })
+        .catch((error) => {
+          console.error('Error deleting the recipe:', error);
+        });
     });
   });
 });
+
