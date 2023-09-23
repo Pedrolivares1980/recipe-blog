@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const flashContainer = document.querySelector(".flash-messages");
     flashContainer.appendChild(flashDiv);
 
-    // Add click event listener to manually close the flash message
+    // Event listener to manually close the flash message
     flashDiv.querySelector(".close").addEventListener("click", () => {
       flashDiv.remove();
     });
