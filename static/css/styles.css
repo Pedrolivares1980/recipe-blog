@@ -215,8 +215,6 @@ main {
 
 .card-header button {
   width: 100%;
-  text-align: left;
-  font-weight: bold;
 }
 
 .card-header button:focus {

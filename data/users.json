@@ -12,5 +12,12 @@
         "email": "admin@admin.com",
         "password": "$2b$12$iD0XA55Ihh7T1pXstT7//O.Bju9QdzqddK6JQ2p8uCipt3b5lcY3W",
         "profile_image": "pedro.webp"
+    },
+    "elisaolivares2001@gmail.com": {
+        "user_id": 3,
+        "name": "Elisa",
+        "email": "elisaolivares2001@gmail.com",
+        "password": "$2b$12$9yI67pi0bfAed/KHRlAIJ.d6OqwTd4CaUYdg8N8ZxAHK11Wr9Tf8K",
+        "profile_image": "WhatsApp_Image_2023-05-28_at_15.41.10.jpg"
     }
 }

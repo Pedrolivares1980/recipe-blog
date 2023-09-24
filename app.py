@@ -120,7 +120,7 @@ def profile():
 
         if request.method == 'POST':
             # Get data from the recipe form
-            recipe_name = request.form['recipe_name']
+            name = request.form['recipe_name']
             category = request.form['category']
             difficulty = request.form['difficulty']
             ingredients = request.form['ingredients'].split('\n')
@@ -137,7 +137,7 @@ def profile():
             new_recipe = {
                 'user_id': user_id,
                 'id': len(recipes) + 1,
-                'recipe_name': recipe_name,
+                'name': name,
                 'category': category,
                 'difficulty': difficulty,
                 'ingredients': ingredients,
