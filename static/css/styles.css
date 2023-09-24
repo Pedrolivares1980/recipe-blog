@@ -76,7 +76,7 @@ textarea {
 
 /* Navigation bar */
 .navbar {
-  background-color: rgba(217, 164, 4, 0.6);
+  background-color: black;
   width: 100%;
 }
 
@@ -98,7 +98,9 @@ textarea {
 /* Active link in the navbar */
 .navbar-nav .active a {
   background-color: var(--blue-color);
-  border-radius: 30%;
+  width: 6rem;
+  margin: 0 auto;
+  border-radius: 20%;
   color: black;
   font-weight: bolder;
 }
