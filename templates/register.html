@@ -13,7 +13,7 @@
       <!-- Registration Description -->
       <p class="fs-6 mb-4 text-center">Register now for free and become part of the world's largest community of food lovers.</p>
       <!-- Registration Form -->
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data"> <!-- Added enctype for file uploads -->
         <!-- Name Field -->
         <div class="form-group mb-3">
           <label class="fw-semibold" for="name">Name:</label>
@@ -33,6 +33,11 @@
         <div class="form-group mb-3">
           <label class="fw-semibold" for="confirm_password">Confirm Password:</label>
           <input type="password" class="form-control border-1 border-black" id="confirm_password" name="confirm_password" required placeholder="******">
+        </div>
+        <!-- Profile Image Field -->
+        <div class="form-group mb-3">
+          <label class="fw-semibold" for="profile_image">Profile Image:</label>
+          <input type="file" class="form-control border-1 border-black" id="profile_image" name="profile_image" accept=".jpg, .jpeg, .png .webp" >
         </div>
         <!-- Registration Button -->
         <div class="container mt-3 col-3 ms-auto">

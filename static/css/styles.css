@@ -14,6 +14,7 @@
   --secondary-color: #BFBAA8;
   --blue-color: #361861;
   --blue-color-ligth: #1126AD;
+  --text-color: #2F3245;
 }
 
 /* General styles for the body */
@@ -23,6 +24,7 @@ html, body {
   font-size: 0.89rem;
   line-height: 1.6;
   background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .logo{
@@ -221,7 +223,26 @@ main {
   outline: none;
 }
 
-/* Contact */
+/* ======================================== Profile.html ======================================== */
+
+.user-profile {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.profile-image img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+/* ======================================== Contact.html ======================================== */
+
 .contact_img {
   height: 300px;
   object-fit: cover;
@@ -230,7 +251,8 @@ main {
   margin: 0 auto;
 }
 
-/* Footer */
+/* ======================================== Footer ======================================== */
+
 .footer {
   background-color: var(--primary-color);
   color: black;

@@ -3,7 +3,19 @@
 {% block content %}
 <div class="container profile_container">
   <!-- Profile Heading -->
-  <h1 class="text-center mb-3 fs-1 fw-bolder">Welcome to Your Profile</h1>
+  <h1 class="text-center mb-3 fs-2 fw-bolder">Welcome to your profile site <span class="text-capitalize">{{ user_name }}</span></h1>
+
+  <!-- Profile Section -->
+  <div class="user-profile">
+    <div class="profile-image">
+        {% if profile_image %}
+        <img src="{{ url_for('static', filename='img/profiles/' + profile_image) }}" alt="Profile Image">
+        {% else %}
+        <img src="{{ url_for('static', filename='img/default_profile.jpg') }}" alt="Default Profile Image">
+        {% endif %}
+    </div>
+  </div>
+
 
   <!-- Your Recipes Section -->
   <h2 class="text-center mb-3 fs-3 fw-semibold">Your Recipes</h2>
@@ -73,7 +85,7 @@
     <!-- Image File Field -->
     <div class="form-group mb-3">
       <label class="fs-6 fw-semibold ms-2 mb-2" for="image_file">Image:</label>
-      <input type="file" class="form-control border-1 border-black" id="image_file" name="image_file" accept="image/*" required>
+      <input type="file" class="form-control border-1 border-black" id="image_file" name="image_file" accept="image/*" required >
     </div>
     <!-- Add Recipe Button -->
     <div class="container mt-3 mt-md-5 col-5 col-md-3 mx-auto">

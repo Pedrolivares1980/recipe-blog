@@ -7,18 +7,19 @@ from functions import RecipeManager, ContactManager, UserManager, Authenticator,
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'c86522f1d36832cb56a3b29716986d607ac42dfc'
 
-
 # Paths to data files
-UPLOAD_FOLDER = 'static/img/recipes'
+UPLOAD_FOLDER = 'static/img'
+PROFILE_IMAGES_FOLDER = os.path.join(UPLOAD_FOLDER, 'profiles')  # Folder for user profile images
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['PROFILE_IMAGES_FOLDER'] = PROFILE_IMAGES_FOLDER
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
 recipe_manager = RecipeManager(data_dir)
 contact_manager = ContactManager(data_dir)
 user_manager = UserManager(data_dir)
 authenticator = Authenticator()
 
-# Add 'is_authenticated' to the global Jinja2 context
-app.jinja_env.globals.update(is_authenticated=authenticator.is_authenticated)
+# Add 'is_authenticated' and 'get_user_data' to the global Jinja2 context
+app.jinja_env.globals.update(is_authenticated=authenticator.is_authenticated, user_manager=user_manager)
 
 # Route to register a new user
 @app.route('/register', methods=['GET', 'POST'])
@@ -39,13 +40,22 @@ def register():
         # Hash the password using bcrypt
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
+        # Save the user's profile image
+        profile_image = request.files['profile_image']
+        profile_image_filename = secure_filename(profile_image.filename)
+        if not profile_image_filename:
+            # If no profile image is provided, use the default profile image
+            profile_image_filename = 'default_profile.jpg'
+        profile_image.save(os.path.join(app.config['PROFILE_IMAGES_FOLDER'], profile_image_filename))
+
         # Store user information in the dictionary
         user_id = len(registered_users) + 1  # Generate a unique user ID
         registered_users[email] = {
             'user_id': user_id,
             'name': name,
             'email': email,
-            'password': hashed_password
+            'password': hashed_password,
+            'profile_image': profile_image_filename  # Store the profile image filename
         }
 
         # Save the registered users to users.json
@@ -84,7 +94,7 @@ def login():
 
     return render_template('login.html', title='Login')
 
-
+# Route to Recipe
 @app.route('/recipes')
 def recipes_page():
     # Load recipes from the data file
@@ -92,7 +102,7 @@ def recipes_page():
 
     return render_template('recipes.html', title='Recipes', recipes=recipes)
 
-# Route to profile
+# Route to Profile
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
     user_id = session.get('user_id')  # Get 'user_id' from the session if it exists
@@ -100,6 +110,11 @@ def profile():
     if user_id:
         # Load recipes from the data file
         recipes = recipe_manager.load_recipes()
+
+        # Get the user's profile image filename from user data
+        users = user_manager.load_users()
+        user = users.get(user_id)
+        user_name = user.get('name') if user else ''  # Get the user's name
 
         if request.method == 'POST':
             # Get data from the recipe form
@@ -114,7 +129,7 @@ def profile():
             image_filename = secure_filename(image_file.filename)
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
             image_file.save(image_path)
-            
+
             # Create a new recipe object associated with the user's ID
             new_recipe = {
                 'user_id': user_id,
@@ -130,8 +145,6 @@ def profile():
             recipes.append(new_recipe)
             recipe_manager.save_recipes(recipes)
 
-
-
             flash(('Recipe added successfully. Thank you for sharing.', 'success'))
 
             # Redirect to the profile page after adding a recipe
@@ -139,10 +152,15 @@ def profile():
 
         # Load recipes for the current user (filter by user ID)
         user_recipes = [recipe for recipe in recipes if recipe.get('user_id') == user_id]
-        return render_template('profile.html', title='Profile', recipes=user_recipes)
+        
+        # Get the user's profile image filename from user data
+        profile_image_filename = user.get('profile_image') if user else 'default_profile.jpg'
+
+        return render_template('profile.html', title='Profile', recipes=user_recipes, profile_image=profile_image_filename, user_name=user_name)
 
     flash(('You must log in to access your profile.', 'danger'))
     return redirect(url_for('login'))
+
 
 
 # Route to delete a recipe by ID
