@@ -36,7 +36,7 @@
   <!-- Add a New Recipe Section -->
   <h2 class="text-center fs-3 fw-semibold my-4">Add a New Recipe</h2>
   <!-- Recipe Form -->
-  <form  method="POST">
+  <form method="POST" enctype="multipart/form-data">
     <!-- Recipe Name Field -->
     <div class="form-group mb-3">
       <label class="fs-6 fw-semibold ms-2 mb-2" for="recipe_name">Recipe Name:</label>
@@ -70,10 +70,10 @@
       <label class="fs-6 fw-semibold ms-2 mb-2" for="instructions">Instructions:</label>
       <textarea class="form-control border-1 border-black" id="instructions" name="instructions" rows="4" required placeholder="Explains how to make the recipe."></textarea>
     </div>
-    <!-- Image URL Field -->
+    <!-- Image File Field -->
     <div class="form-group mb-3">
-      <label class="fs-6 fw-semibold ms-2 mb-2" for="image_url">Image URL:</label>
-      <input type="text" class="form-control border-1 border-black" id="image_url" name="image_url" required placeholder="http://example/example.jpg">
+      <label class="fs-6 fw-semibold ms-2 mb-2" for="image_file">Image:</label>
+      <input type="file" class="form-control border-1 border-black" id="image_file" name="image_file" accept="image/*" required>
     </div>
     <!-- Add Recipe Button -->
     <div class="container mt-3 mt-md-5 col-5 col-md-3 mx-auto">

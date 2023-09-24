@@ -32,7 +32,7 @@
     {% for recipe in recipes %}
     <div class="col-12 col-md-6 col-xl-4 mb-4">
       <div class="card recipe-card" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
-        <img src="{{ recipe.image_path }}" class="card-img-top" alt="{{ recipe.name }}">
+        <img src="{{ url_for('static', filename='img/recipes/' + recipe['image_filename']) }}" class="card-img-top" alt="{{ recipe['recipe_name'] }}">
         <div class="card-body">
           <h5 class="card-title text-center">{{ recipe.name }}</h5>
           <p class="card-text text-center">Category: {{ recipe.category }} <br> Difficulty: {{ recipe.difficulty }}</p>

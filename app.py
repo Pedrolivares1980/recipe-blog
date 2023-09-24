@@ -1,12 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import os
 import bcrypt
+from werkzeug.utils import secure_filename
 from functions import RecipeManager, ContactManager, UserManager, Authenticator, Message
 
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'c86522f1d36832cb56a3b29716986d607ac42dfc'
 
+
 # Paths to data files
+UPLOAD_FOLDER = 'static/img/recipes'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
 recipe_manager = RecipeManager(data_dir)
 contact_manager = ContactManager(data_dir)
@@ -104,25 +108,32 @@ def profile():
             difficulty = request.form['difficulty']
             ingredients = request.form['ingredients'].split('\n')
             instructions = request.form['instructions'].split('\n')
-            image_url = request.form['image_url']
 
+            # Handle uploaded image file
+            image_file = request.files['image_file']
+            image_filename = secure_filename(image_file.filename)
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
+            image_file.save(image_path)
+            
             # Create a new recipe object associated with the user's ID
             new_recipe = {
                 'user_id': user_id,
-                'id': len(recipes) + 1, 
+                'id': len(recipes) + 1,
                 'recipe_name': recipe_name,
                 'category': category,
                 'difficulty': difficulty,
                 'ingredients': ingredients,
                 'instructions': instructions,
-                'image_url': image_url
+                'image_filename': image_filename  # Use 'image_filename' instead of 'image_path'
             }
 
             recipes.append(new_recipe)
             recipe_manager.save_recipes(recipes)
 
+
+
             flash(('Recipe added successfully. Thank you for sharing.', 'success'))
-            
+
             # Redirect to the profile page after adding a recipe
             return redirect(url_for('profile'))
 

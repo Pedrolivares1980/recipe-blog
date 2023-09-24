@@ -23,7 +23,7 @@
             "Return sliced chicken to the skillet and cook until heated through. Season with additional salt and black pepper if needed.",
             "Serve the chicken Alfredo sauce over cooked fettuccine pasta. Garnish with fresh chopped parsley."
         ],
-        "image_path": "https://th.bing.com/th/id/OIP.43lmjBGUru87OoHmIKXokwAAAA?w=203&h=304&c=7&r=0&o=5&pid=1.7"
+        "image_filename": "Chicken-Alfredo.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -45,7 +45,7 @@
             "Mix all ingredients with lime juice and salt.",
             "Serve with tortilla chips."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2019/01/08/16/26/guacamole-3921525_1280.jpg"
+        "image_filename": "Guacamole.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -67,7 +67,7 @@
             "Top with chopped tomatoes and fresh basil.",
             "Drizzle with olive oil and season with salt."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2020/10/01/22/39/gourmet-5619887_1280.jpg"
+        "image_filename": "bruschetta.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -88,7 +88,7 @@
             "Place lettuce, shrimp, rice noodles, and mint leaves on rice paper.",
             "Roll it up and serve with peanut sauce."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2017/02/25/15/18/spring-rolls-2097978_640.jpg"
+        "image_filename": "Spring-Rolls.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -110,7 +110,7 @@
             "Drizzle with olive oil and balsamic vinegar.",
             "Season with salt."
         ],
-        "image_path": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2F3b432b41ce04c96a08d77befa42b9881a587a436"
+        "image_filename": "Caprese-Salad.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -131,7 +131,7 @@
             "Roll sushi with nori seaweed, rice, fish, and avocado.",
             "Serve with wasabi and soy sauce."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2017/03/02/20/53/sushi-2112350_640.jpg"
+        "image_filename": "sush.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -149,7 +149,7 @@
             "Bake snails with garlic butter and white wine.",
             "Sprinkle with parsley and serve."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2015/09/05/21/51/escargot-925593_1280.jpg"
+        "image_filename": "scargot.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -171,7 +171,7 @@
             "Season with soy sauce and cook until vegetables are tender.",
             "Serve hot."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2022/03/18/15/09/dish-7076898_640.jpg"
+        "image_filename": "Beef-Stir-Fry.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -193,7 +193,7 @@
             "Repeat layers and top with tomato sauce and Italian seasoning.",
             "Bake until cheese is bubbly and golden."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2017/02/15/15/17/meal-2069021_640.jpg"
+        "image_filename": "Lasagna.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -216,7 +216,7 @@
             "Pan-sear salmon fillets until cooked through.",
             "Serve with lemon butter sauce."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2016/04/06/17/45/salmon-1312372_640.jpg"
+        "image_filename": "Salmon.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -239,7 +239,7 @@
             "Wrap in puff pastry and brush with egg wash.",
             "Bake until golden brown."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2019/10/22/10/11/beef-wellington-4568239_1280.jpg"
+        "image_filename": "Beef Wellington.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -262,7 +262,7 @@
             "Combine the cooked spaghetti, crispy guanciale or pancetta, and the egg mixture in a bowl. Toss to combine until creamy and coated.",
             "Garnish with fresh chopped parsley and additional cheese if desired. Serve immediately."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2015/04/08/13/13/pasta-712664_640.jpg"
+        "image_filename": "pasta-carbonara.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -292,7 +292,7 @@
             "Bake for 30 to 35 minutes or until a toothpick inserted into the center comes out clean.",
             "Allow cakes to cool completely, then frost with chocolate frosting."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2019/07/28/04/56/sweets-4367937_640.jpg"
+        "image_filename": "Chocolate Cake.webp"    
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -317,7 +317,7 @@
             "Bake for 45 to 55 minutes or until the crust is golden brown.",
             "Let it cool before serving."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2016/09/25/21/48/apple-pie-1694715_640.jpg"
+        "image_filename": "Apple Pie.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -341,7 +341,7 @@
             "Spread a layer of mascarpone mixture and repeat layers.",
             "Chill for several hours, then dust with cocoa powder before serving."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2023/05/08/13/41/tiramisu-7978647_640.jpg"
+        "image_filename": "tiramisu.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -368,7 +368,7 @@
             "Pour over crust and bake for 55 to 60 minutes or until the center is set.",
             "Chill in the refrigerator before serving."
         ],
-        "image_path": "https://www.allrecipes.com/thmb/v8JZdIICA1oerzX0L-KzyW2w9hM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8350-chantals-new-york-cheesecake-DDMFS-4x3-426569e82b4142a6a1ed01e068544245.jpg"
+        "image_filename": "Cheesecake.webp"
     },
     {
         "user_id": "pedr.olivares80@gmail.com",
@@ -394,34 +394,6 @@
             "Stir in chocolate chips. Drop dough by rounded tablespoons onto ungreased baking sheets.",
             "Bake for 9 to 11 minutes or until golden brown. Cool on wire racks."
         ],
-        "image_path": "https://cdn.pixabay.com/photo/2016/04/22/01/01/cookies-1344929_1280.jpg"
-    },
-    {
-        "user_id": "test@test.com",
-        "id": 19,
-        "recipe_name": "test",
-        "category": "Starter",
-        "difficulty": "Easy",
-        "ingredients": [
-            "test"
-        ],
-        "instructions": [
-            "test"
-        ],
-        "image_url": "test"
-    },
-    {
-        "user_id": "test@test.com",
-        "id": 20,
-        "recipe_name": "test",
-        "category": "Starter",
-        "difficulty": "Easy",
-        "ingredients": [
-            "test"
-        ],
-        "instructions": [
-            "test"
-        ],
-        "image_url": "ets"
+        "image_filename": "Chocolate Chip Cookies.webp"
     }
 ]
