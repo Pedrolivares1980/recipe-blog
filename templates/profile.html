@@ -2,6 +2,11 @@
 
 {% block content %}
 <div class="container profile_container">
+
+    <!-- Flash Messages -->
+    <div class="container flash-messages">
+    </div>
+
   <!-- Profile Heading -->
   <h1 class="text-center mb-3 fs-2 fw-bolder">Welcome to your profile site <span class="text-capitalize">{{ user_name }}</span></h1>
 
@@ -15,6 +20,13 @@
         {% endif %}
     </div>
   </div>
+
+  <!-- Delete Account Form -->
+  <form method="POST" action="/delete_account" class="container my-3 mx-5">
+    <div class="container ">
+        <button id="delete-account-btn" class="btn btn-danger">Delete Account</button>
+    </div>
+  </form>
 
 
   <!-- Your Recipes Section -->
@@ -93,9 +105,7 @@
     </div>
   </form>
 
-  <!-- Flash Messages -->
-  <div class="container flash-messages">
-  </div>
+
 </div>
 
 <!-- JavaScript for Profile Actions -->

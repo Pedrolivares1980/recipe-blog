@@ -10,8 +10,10 @@ app.secret_key = 'c86522f1d36832cb56a3b29716986d607ac42dfc'
 # Paths to data files
 UPLOAD_FOLDER = 'static/img'
 PROFILE_IMAGES_FOLDER = os.path.join(UPLOAD_FOLDER, 'profiles')  # Folder for user profile images
+RECIPE_IMAGES_FOLDER = os.path.join(UPLOAD_FOLDER, 'recipes')  # Folder for recipe images
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['PROFILE_IMAGES_FOLDER'] = PROFILE_IMAGES_FOLDER
+app.config['RECIPE_IMAGES_FOLDER'] = RECIPE_IMAGES_FOLDER
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
 recipe_manager = RecipeManager(data_dir)
 contact_manager = ContactManager(data_dir)
@@ -40,7 +42,7 @@ def register():
         # Hash the password using bcrypt
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
-        # Save the user's profile image
+        # Save the user's profile image to the profiles folder
         profile_image = request.files['profile_image']
         profile_image_filename = secure_filename(profile_image.filename)
         if not profile_image_filename:
@@ -124,11 +126,12 @@ def profile():
             ingredients = request.form['ingredients'].split('\n')
             instructions = request.form['instructions'].split('\n')
 
-            # Handle uploaded image file
+            # Handle uploaded image file for recipes
             image_file = request.files['image_file']
             image_filename = secure_filename(image_file.filename)
-            image_path = os.path.join(app.config['UPLOAD_FOLDER'], image_filename)
+            image_path = os.path.join(app.config['RECIPE_IMAGES_FOLDER'], image_filename)
             image_file.save(image_path)
+
 
             # Create a new recipe object associated with the user's ID
             new_recipe = {
@@ -213,6 +216,62 @@ def contact():
         return redirect(url_for('index'))
 
     return render_template('contact.html', title='Contact Us')
+
+
+# Route to delete a user account and associated data
+@app.route('/delete_account', methods=['POST'])
+def delete_account():
+    user_id = session.get('user_id')
+    
+    if user_id:
+        users = user_manager.load_users()
+        recipes = recipe_manager.load_recipes()
+
+        # Remove the user's recipes and associated images
+        updated_recipes = []
+        for recipe in recipes:
+            if recipe.get('user_id') != user_id:
+                updated_recipes.append(recipe)
+            else:
+                # Delete the image associated with the user's recipe
+                recipe_image_filename = recipe.get('image_filename')
+                if recipe_image_filename:
+                    recipe_image_path = os.path.join(app.config['UPLOAD_FOLDER'], recipe_image_filename)
+                    if os.path.exists(recipe_image_path):
+                        os.remove(recipe_image_path)
+
+        # Remove the user from the list of registered users
+        if user_id in users:
+            # Get the user's profile image filename
+            profile_image_filename = users[user_id].get('profile_image')
+
+            # Delete the user from the list of registered users
+            del users[user_id]
+            user_manager.save_users(users)
+
+            # Delete all recipes associated with the user
+            recipe_manager.save_recipes(updated_recipes)
+
+            # Delete the user's profile image if it exists and is not the default image
+            if profile_image_filename and profile_image_filename != 'default_profile.jpg':
+                profile_image_path = os.path.join(app.config['PROFILE_IMAGES_FOLDER'], profile_image_filename)
+                if os.path.exists(profile_image_path):
+                    os.remove(profile_image_path)
+
+            # Log the user out
+            session.pop('user_id', None)
+
+            flash(('Your account and associated data have been successfully deleted.', 'success'))
+        else:
+            flash(('Account not found.', 'danger'))
+
+        return redirect(url_for('index'))
+
+    flash(('You must log in to access this page.', 'danger'))
+    return redirect(url_for('login'))
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

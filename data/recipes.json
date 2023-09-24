@@ -1,6 +1,6 @@
 [
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 7,
         "name": "Chicken Alfredo",
         "category": "Main",
@@ -26,7 +26,7 @@
         "image_filename": "Chicken-Alfredo.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 1,
         "name": "Guacamole",
         "category": "Starter",
@@ -48,7 +48,7 @@
         "image_filename": "Guacamole.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 2,
         "name": "Bruschetta",
         "category": "Starter",
@@ -70,7 +70,7 @@
         "image_filename": "bruschetta.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 3,
         "name": "Spring Rolls",
         "category": "Starter",
@@ -91,7 +91,7 @@
         "image_filename": "Spring-Rolls.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 4,
         "name": "Caprese Salad",
         "category": "Starter",
@@ -113,7 +113,7 @@
         "image_filename": "Caprese-Salad.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 5,
         "name": "Sushi",
         "category": "Starter",
@@ -134,7 +134,7 @@
         "image_filename": "sush.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 6,
         "name": "Escargot",
         "category": "Starter",
@@ -152,7 +152,7 @@
         "image_filename": "scargot.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 8,
         "name": "Beef Stir-Fry",
         "category": "Main",
@@ -174,7 +174,7 @@
         "image_filename": "Beef-Stir-Fry.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 9,
         "name": "Lasagna",
         "category": "Main",
@@ -196,7 +196,7 @@
         "image_filename": "Lasagna.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 10,
         "name": "Salmon ",
         "category": "Main",
@@ -219,7 +219,7 @@
         "image_filename": "Salmon.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 11,
         "name": "Beef Wellington",
         "category": "Main",
@@ -242,7 +242,7 @@
         "image_filename": "Beef Wellington.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 12,
         "name": "Pasta Carbonara",
         "category": "Main",
@@ -265,7 +265,7 @@
         "image_filename": "pasta-carbonara.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 13,
         "name": "Chocolate Cake",
         "category": "Dessert",
@@ -295,7 +295,7 @@
         "image_filename": "Chocolate Cake.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 14,
         "name": "Apple Pie",
         "category": "Dessert",
@@ -320,7 +320,7 @@
         "image_filename": "Apple Pie.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 15,
         "name": "Tiramisu",
         "category": "Dessert",
@@ -344,7 +344,7 @@
         "image_filename": "tiramisu.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 16,
         "name": "Cheesecake",
         "category": "Dessert",
@@ -371,7 +371,7 @@
         "image_filename": "Cheesecake.webp"
     },
     {
-        "user_id": "pedr.olivares80@gmail.com",
+        "user_id": "admin@admin.com",
         "id": 17,
         "name": "Chocolate Chip Cookies",
         "category": "Dessert",
@@ -395,5 +395,19 @@
             "Bake for 9 to 11 minutes or until golden brown. Cool on wire racks."
         ],
         "image_filename": "Chocolate Chip Cookies.webp"
+    },
+    {
+        "user_id": "admin@admin.com",
+        "id": 18,
+        "recipe_name": "prueba",
+        "category": "Starter",
+        "difficulty": "Easy",
+        "ingredients": [
+            "prueba"
+        ],
+        "instructions": [
+            "prueba"
+        ],
+        "image_filename": "comida_12.webp"
     }
 ]
