@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import os
 import bcrypt
-import shutil
 from werkzeug.utils import secure_filename
 from functions import RecipeManager, ContactManager, UserManager, Authenticator, Message
 
@@ -295,12 +294,6 @@ def delete_account():
 
     flash(('You must log in to access this page.', 'danger'))
     return redirect(url_for('login'))
-
-
-
-
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)

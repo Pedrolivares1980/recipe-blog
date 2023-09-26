@@ -6,7 +6,7 @@
   <h2 class="text-center fs-1 fw-bolder mb-3 mt-4 text-uppercase">Recipes</h2>
 
   <div class="container mb-4 recipe_filters_conteiner">
-      <!-- Filter by Difficulty -->
+    <!-- Filter by Difficulty -->
     <div class="mb-3 mt-2 pt-2 recipe_filters_content">
       <label class="mb-2" for="difficulty-filter">Filter by Difficulty:</label>
       <select id="difficulty-filter" class="form-select border border-black rounded-2">
@@ -34,18 +34,21 @@
   <div class="row" id="recipe-groups">
     {% for recipe in recipes %}
     <div class="col-12 col-md-6 col-xl-4 mb-4">
-      <div class="card recipe-card border border-black rounded-4" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
-      <img src="{{ url_for('static', filename='img/recipes/' + recipe.image_filename) }}" class="card-img-top border border-black rounded-4" alt="Recipe Image">
+      <div class="card recipe-card border border-black rounded-4" data-category="{{ recipe.category }}"
+        data-difficulty="{{ recipe.difficulty }}">
+        <img src="{{ url_for('static', filename='img/recipes/' + recipe.image_filename) }}"
+          class="card-img-top border border-black rounded-4" alt="Recipe Image">
         <div class="card-body">
           <h5 class="card-title text-center text-uppercase fw-bolder my-4">{{ recipe.name }}</h5>
-          <p class="card-text text-center">Category: <span class="fw-bold ">{{ recipe.category }}</span> <br> Difficulty: <span class="fw-bold ">{{ recipe.difficulty }}</span></p>
+          <p class="card-text text-center">Category: <span class="fw-bold ">{{ recipe.category }}</span> <br>
+            Difficulty: <span class="fw-bold ">{{ recipe.difficulty }}</span></p>
           <div class="accordion accordion-flush" id="accordion-{{ loop.index }}">
             <!-- Ingredients Accordion -->
             <div class="card">
               <div class="card-header" id="heading-{{ loop.index }}">
                 <h6 class="mb-0">
-                  <button class="btn btn-link text-center text-decoration-none fw-bold " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse-{{ loop.index }}" aria-expanded="false"
+                  <button class="btn btn-link text-center text-decoration-none fw-bold " type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapse-{{ loop.index }}" aria-expanded="false"
                     aria-controls="collapse-{{ loop.index }}">
                     Ingredients
                   </button>
@@ -66,8 +69,8 @@
             <div class="card mt-2">
               <div class="card-header" id="heading-{{ loop.index }}-2">
                 <h6 class="mb-0">
-                  <button class="btn btn-link text-center text-decoration-none fw-bold" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse-{{ loop.index }}-2" aria-expanded="false"
+                  <button class="btn btn-link text-center text-decoration-none fw-bold" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapse-{{ loop.index }}-2" aria-expanded="false"
                     aria-controls="collapse-{{ loop.index }}-2">
                     Instructions
                   </button>
@@ -88,11 +91,14 @@
         </div>
         <!-- section for user information -->
         <div class="d-flex align-items-center justify-content-around p-3">
-          <div class="me-3 "> 
-            <img src="{{ url_for('static', filename='img/profiles/' + user_manager.load_users()[recipe.user_id]['profile_image']) }}" alt="Profile Image" class="rounded-circle recipe_profile">
+          <div class="me-3 ">
+            <img
+              src="{{ url_for('static', filename='img/profiles/' + user_manager.load_users()[recipe.user_id]['profile_image']) }}"
+              alt="Profile Image" class="rounded-circle recipe_profile">
           </div>
-          <div> 
-            <p class="recipe_user_name">Added by:  <span class="recipe_user_name_span">{{ user_manager.load_users()[recipe.user_id]['name'] }}</span></p>
+          <div>
+            <p class="recipe_user_name">Added by: <span class="recipe_user_name_span">{{
+                user_manager.load_users()[recipe.user_id]['name'] }}</span></p>
           </div>
         </div>
         <!-- End of user information section -->
