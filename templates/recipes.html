@@ -37,8 +37,8 @@
       <div class="card recipe-card border border-black rounded-2" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
       <img src="{{ url_for('static', filename='img/recipes/' + recipe.image_filename) }}" class="card-img-top border border-black rounded-2" alt="Recipe Image">
         <div class="card-body">
-          <h5 class="card-title text-center text-uppercase fw-bold my-3">{{ recipe.name }}</h5>
-          <p class="card-text text-center">Category: <span class="fw-bold fs-4">{{ recipe.category }}</span> <br> Difficulty: <span class="fw-bold fs-4">{{ recipe.difficulty }}</span></p>
+          <h5 class="card-title text-center text-uppercase fw-bolder fs-4 my-4">{{ recipe.name }}</h5>
+          <p class="card-text text-center">Category: <span class="fw-bold fs-5">{{ recipe.category }}</span> <br> Difficulty: <span class="fw-bold fs-5">{{ recipe.difficulty }}</span></p>
           <div class="accordion accordion-flush" id="accordion-{{ loop.index }}">
             <!-- Ingredients Accordion -->
             <div class="card">
