@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 import os
 import bcrypt
+import shutil
 from werkzeug.utils import secure_filename
 from functions import RecipeManager, ContactManager, UserManager, Authenticator, Message
 
@@ -22,6 +23,14 @@ authenticator = Authenticator()
 
 # Add 'is_authenticated' and 'get_user_data' to the global Jinja2 context
 app.jinja_env.globals.update(is_authenticated=authenticator.is_authenticated, user_manager=user_manager)
+
+
+# Route for home page
+@app.route('/')
+@app.route('/home')
+def index():
+    return render_template('index.html', title='Home')
+
 
 # Route to register a new user
 @app.route('/register', methods=['GET', 'POST'])
@@ -45,12 +54,12 @@ def register():
         # Save the user's profile image to the profiles folder
         profile_image = request.files['profile_image']
         profile_image_filename = secure_filename(profile_image.filename)
+        
+        # Check if a profile image was provided, otherwise use the default profile image
         if not profile_image_filename:
-            # If no profile image is provided, use the default profile image
             profile_image_filename = 'default_profile.jpg'
-        profile_image.save(os.path.join(app.config['PROFILE_IMAGES_FOLDER'], profile_image_filename))
 
-        # Store user information in the dictionary
+        # Save the user information in the dictionary
         user_id = len(registered_users) + 1  # Generate a unique user ID
         registered_users[email] = {
             'user_id': user_id,
@@ -68,12 +77,6 @@ def register():
 
     return render_template('register.html', title='Register')
 
-
-# Route for home page
-@app.route('/')
-@app.route('/home')
-def index():
-    return render_template('index.html', title='Home')
 
 # Route to log in
 @app.route('/login', methods=['GET', 'POST'])
@@ -107,14 +110,16 @@ def recipes_page():
 # Route to Profile
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
-    user_id = session.get('user_id')  # Get 'user_id' from the session if it exists
+    user_id = session.get('user_id')  # Obtener el ID del usuario desde la sesión
 
     if user_id:
         # Load recipes from the data file
         recipes = recipe_manager.load_recipes()
 
-        # Get the user's profile image filename from user data
+        # Load user information from the data file
         users = user_manager.load_users()
+
+        # Get the user's profile image filename from user data
         user = users.get(user_id)
         user_name = user.get('name') if user else ''  # Get the user's name
 
@@ -129,13 +134,18 @@ def profile():
             # Handle uploaded image file for recipes
             image_file = request.files['image_file']
             image_filename = secure_filename(image_file.filename)
-            image_path = os.path.join(app.config['RECIPE_IMAGES_FOLDER'], image_filename)
-            image_file.save(image_path)
 
+            if image_filename:  # Check if an image was provided
+                # Image was provided, save it
+                image_path = os.path.join(app.config['RECIPE_IMAGES_FOLDER'], image_filename)
+                image_file.save(image_path)
+            else:
+                # No image provided, use the default recipe image
+                image_filename = 'default_recipe.jpg'
 
-            # Create a new recipe object associated with the user's ID
+            # Create a new recipe object associated with the user's email (user_id)
             new_recipe = {
-                'user_id': user_id,
+                'user_id': user_id,  # Use the user's email as user_id
                 'id': len(recipes) + 1,
                 'name': name,
                 'category': category,
@@ -153,9 +163,9 @@ def profile():
             # Redirect to the profile page after adding a recipe
             return redirect(url_for('profile'))
 
-        # Load recipes for the current user (filter by user ID)
+        # Load recipes for the current user (filter by user's email)
         user_recipes = [recipe for recipe in recipes if recipe.get('user_id') == user_id]
-        
+
         # Get the user's profile image filename from user data
         profile_image_filename = user.get('profile_image') if user else 'default_profile.jpg'
 
@@ -163,6 +173,8 @@ def profile():
 
     flash(('You must log in to access your profile.', 'danger'))
     return redirect(url_for('login'))
+
+
 
 
 
@@ -179,6 +191,15 @@ def delete_recipe(recipe_id):
         recipe_to_delete = next((recipe for recipe in recipes if recipe.get('id') == recipe_id and recipe.get('user_id') == user_id), None)
 
         if recipe_to_delete:
+            # Get the image filename for the recipe
+            image_filename = recipe_to_delete.get('image_filename')
+
+            # Check if the image_filename is not 'default_recipe.jpg' before deleting
+            if image_filename and image_filename != 'default_recipe.jpg':
+                image_path = os.path.join(app.config['RECIPE_IMAGES_FOLDER'], image_filename)
+                if os.path.exists(image_path):
+                    os.remove(image_path)
+
             recipes.remove(recipe_to_delete)
             recipe_manager.save_recipes(recipes)
 
@@ -190,6 +211,7 @@ def delete_recipe(recipe_id):
 
     # If the user is not logged in, return an unauthorized response
     return jsonify({'status': 'error', 'message': 'Unauthorized'}), 401
+1
 
 
 # Route to log out
@@ -227,36 +249,34 @@ def delete_account():
         users = user_manager.load_users()
         recipes = recipe_manager.load_recipes()
 
-        # Remove the user's recipes and associated images
-        updated_recipes = []
-        for recipe in recipes:
-            if recipe.get('user_id') != user_id:
-                updated_recipes.append(recipe)
-            else:
-                # Delete the image associated with the user's recipe
-                recipe_image_filename = recipe.get('image_filename')
-                if recipe_image_filename:
-                    recipe_image_path = os.path.join(app.config['UPLOAD_FOLDER'], recipe_image_filename)
-                    if os.path.exists(recipe_image_path):
-                        os.remove(recipe_image_path)
-
-        # Remove the user from the list of registered users
-        if user_id in users:
-            # Get the user's profile image filename
-            profile_image_filename = users[user_id].get('profile_image')
-
-            # Delete the user from the list of registered users
-            del users[user_id]
-            user_manager.save_users(users)
-
+        # Check if the user is valid and get their user profile
+        user = users.get(user_id)
+        if user:
             # Delete all recipes associated with the user
-            recipe_manager.save_recipes(updated_recipes)
+            updated_recipes = [recipe for recipe in recipes if recipe.get('user_id') != user_id]
 
-            # Delete the user's profile image if it exists and is not the default image
+            # Delete the user's profile image if it's not the default profile image
+            profile_image_filename = user.get('profile_image')
             if profile_image_filename and profile_image_filename != 'default_profile.jpg':
                 profile_image_path = os.path.join(app.config['PROFILE_IMAGES_FOLDER'], profile_image_filename)
                 if os.path.exists(profile_image_path):
                     os.remove(profile_image_path)
+
+            # Delete all recipe images associated with the user except default ones
+            for recipe in recipes:
+                if recipe.get('user_id') == user_id:
+                    image_filename = recipe.get('image_filename')
+                    if image_filename and image_filename != 'default_recipe.jpg':
+                        image_path = os.path.join(app.config['RECIPE_IMAGES_FOLDER'], image_filename)
+                        if os.path.exists(image_path):
+                            os.remove(image_path)
+
+            # Remove the user from the list of registered users
+            del users[user_id]
+            user_manager.save_users(users)
+
+            # Save the updated recipes
+            recipe_manager.save_recipes(updated_recipes)
 
             # Log the user out
             session.pop('user_id', None)
@@ -269,6 +289,9 @@ def delete_account():
 
     flash(('You must log in to access this page.', 'danger'))
     return redirect(url_for('login'))
+
+
+
 
 
 

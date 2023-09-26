@@ -1,11 +1,4 @@
 {
-    "pedr.olivares80@gmail.com": {
-        "user_id": 5,
-        "name": "Pedro",
-        "email": "pedr.olivares80@gmail.com",
-        "password": "$2b$12$bDjzSc5wynDSICUrxEWkF.0CgiV8AeHvHgg5YhRV2mKkX.WYFka16",
-        "profile_image": "pedro.webp"
-    },
     "admin@admin.com": {
         "user_id": 2,
         "name": "Admin",
@@ -18,6 +11,6 @@
         "name": "Elisa",
         "email": "elisaolivares2001@gmail.com",
         "password": "$2b$12$9yI67pi0bfAed/KHRlAIJ.d6OqwTd4CaUYdg8N8ZxAHK11Wr9Tf8K",
-        "profile_image": "WhatsApp_Image_2023-05-28_at_15.41.10.jpg"
+        "profile_image": "mama.png"
     }
 }

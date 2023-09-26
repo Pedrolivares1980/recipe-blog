@@ -10,16 +10,13 @@
   <!-- Profile Heading -->
   <h1 class="text-center mb-3 fs-2 fw-bolder">Welcome to your profile site <span class="text-capitalize">{{ user_name }}</span></h1>
 
-  <!-- Profile Section -->
-  <div class="user-profile">
-    <div class="profile-image">
-        {% if profile_image %}
-        <img src="{{ url_for('static', filename='img/profiles/' + profile_image) }}" alt="Profile Image">
-        {% else %}
-        <img src="{{ url_for('static', filename='img/default_profile.jpg') }}" alt="Default Profile Image">
-        {% endif %}
-    </div>
+<!-- Profile Section -->
+<div class="user-profile">
+  <div class="profile-image">
+      <img src="{{ url_for('static', filename='img/profiles/' + profile_image) }}" alt="Profile Image">
   </div>
+</div>
+
 
   <!-- Delete Account Form -->
   <form method="POST" action="/delete_account" class="container my-3 mx-5">
@@ -45,7 +42,7 @@
       {% for recipe in recipes %}
       <!-- Recipe Row -->
       <tr id="recipe-{{ recipe.id }}">
-        <td class="text-center">{{ recipe['recipe_name'] }}</td>
+        <td class="text-center">{{ recipe['name'] }}</td>
         <td class="text-center">{{ recipe['category'] }}</td>
         <td class="text-center">{{ recipe['difficulty'] }}</td>
         <td class="text-center">
@@ -64,7 +61,7 @@
     <!-- Recipe Name Field -->
     <div class="form-group mb-3">
       <label class="fs-6 fw-semibold ms-2 mb-2" for="recipe_name">Recipe Name:</label>
-      <input type="text" class="form-control border-1 border-black" id="recipe_name" name="recipe_name" required placeholder="Recipe name">
+      <input type="text" class="form-control border-1 border-black" id="recipe_name" name="recipe_name" required placeholder="Recipe name" maxlength="30">
     </div>
     <!-- Category Field -->
     <div class="form-group mb-3">
@@ -97,7 +94,7 @@
     <!-- Image File Field -->
     <div class="form-group mb-3">
       <label class="fs-6 fw-semibold ms-2 mb-2" for="image_file">Image:</label>
-      <input type="file" class="form-control border-1 border-black" id="image_file" name="image_file" accept="image/*" required >
+      <input type="file" class="form-control border-1 border-black" id="image_file" name="image_file" accept="image/*" >
     </div>
     <!-- Add Recipe Button -->
     <div class="container mt-3 mt-md-5 col-5 col-md-3 mx-auto">

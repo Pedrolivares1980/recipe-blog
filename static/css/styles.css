@@ -195,6 +195,16 @@ main {
   overflow: hidden;
 }
 
+.recipe_filters_conteiner{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.recipe_filters_content{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .recipe-card {
   max-width: 340px;
   margin: 0 auto;
@@ -219,6 +229,25 @@ main {
 
 .card-header button:focus {
   outline: none;
+}
+
+.recipe_profile{
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recipe_user_name{
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.recipe_user_name_span{
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  color: var(--blue-color);
 }
 
 /* ======================================== Profile.html ======================================== */

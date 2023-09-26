@@ -397,20 +397,6 @@
         "image_filename": "Chocolate Chip Cookies.webp"
     },
     {
-        "user_id": "admin@admin.com",
-        "id": 18,
-        "name": "prueba",
-        "category": "Starter",
-        "difficulty": "Easy",
-        "ingredients": [
-            "prueba"
-        ],
-        "instructions": [
-            "prueba"
-        ],
-        "image_filename": "comida_12.webp"
-    },
-    {
         "user_id": "elisaolivares2001@gmail.com",
         "id": 19,
         "name": "Creamy mac and cheese",
@@ -529,7 +515,7 @@
     {
         "user_id": "elisaolivares2001@gmail.com",
         "id": 22,
-        "name": "Pearl barley, bacon & leek casserole",
+        "name": "Pearl barley casserole",
         "category": "Starter",
         "difficulty": "Easy",
         "ingredients": [
@@ -558,7 +544,7 @@
     {
         "user_id": "elisaolivares2001@gmail.com",
         "id": 23,
-        "name": "Pan-fried hake, white bean & chorizo broth",
+        "name": "Pan-fried hake",
         "category": "Main",
         "difficulty": "Easy",
         "ingredients": [
@@ -593,7 +579,7 @@
     {
         "user_id": "elisaolivares2001@gmail.com",
         "id": 24,
-        "name": "Vegan cookies & cream brownies",
+        "name": "Cookies & cream brownies",
         "category": "Dessert",
         "difficulty": "Easy",
         "ingredients": [
@@ -651,7 +637,7 @@
     {
         "user_id": "elisaolivares2001@gmail.com",
         "id": 26,
-        "name": "Passion fruit & lemon self-saucing pudding",
+        "name": "Passion fruit pudding",
         "category": "Dessert",
         "difficulty": "Easy",
         "ingredients": [
@@ -683,7 +669,7 @@
     {
         "user_id": "elisaolivares2001@gmail.com",
         "id": 27,
-        "name": "Spicy roasted parsnip soup (Vegan)",
+        "name": "Spicy roasted parsnip soup",
         "category": "Starter",
         "difficulty": "Easy",
         "ingredients": [
