@@ -215,8 +215,10 @@ main {
 }
 
 .card-img-top {
-  max-height: 200px;
+  width: 100%;
+  max-height: 300px;
   object-fit: cover;
+  margin-top: .6rem;
 }
 
 .card-header {

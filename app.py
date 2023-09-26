@@ -54,7 +54,7 @@ def register():
         # Save the user's profile image to the profiles folder
         profile_image = request.files['profile_image']
         profile_image_filename = secure_filename(profile_image.filename)
-        
+
         # Check if a profile image was provided, otherwise use the default profile image
         if not profile_image_filename:
             profile_image_filename = 'default_profile.jpg'
@@ -72,10 +72,16 @@ def register():
         # Save the registered users to users.json
         user_manager.save_users(registered_users)
 
+        # Save the profile image to the profiles folder
+        if profile_image_filename != 'default_profile.jpg':
+            profile_image_path = os.path.join(app.config['PROFILE_IMAGES_FOLDER'], profile_image_filename)
+            profile_image.save(profile_image_path)
+
         flash(('Registration successful. Please log in.', 'success'))
         return redirect(url_for('login'))
 
     return render_template('register.html', title='Register')
+
 
 
 # Route to log in

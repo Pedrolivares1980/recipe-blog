@@ -749,5 +749,38 @@
             "Cover loosely with foil and bake for 35-45 mins, removing the foil for the final 10 mins of cooking."
         ],
         "image_filename": "lentil_lasagne.webp"
+    },
+    {
+        "user_id": "pedroolivaresjimenez@gmail.com",
+        "id": 28,
+        "name": "roasted chestnuts",
+        "category": "Dessert",
+        "difficulty": "Easy",
+        "ingredients": [
+            "chestnuts"
+        ],
+        "instructions": [
+            "Make an incision in each chestnut"
+        ],
+        "image_filename": "castanas-asadas.jpg"
+    },
+    {
+        "user_id": "Smcdermott2804@gmail.com",
+        "id": 29,
+        "name": "ceaser salad",
+        "category": "Starter",
+        "difficulty": "Easy",
+        "ingredients": [
+            "lettuce\r",
+            "pickel oinion\r",
+            "croutons\r",
+            "scalians\r",
+            "tuna(optional)\r",
+            "ceaser dressing"
+        ],
+        "instructions": [
+            "first add lettuce then add the croutons following with the pickel oinions and scalians. after add tuna if you like and finish off with ceaser dressing."
+        ],
+        "image_filename": "recipe-image-legacy-id-327831_11-3524329.jpg"
     }
 ]

@@ -12,5 +12,19 @@
         "email": "elisaolivares2001@gmail.com",
         "password": "$2b$12$9yI67pi0bfAed/KHRlAIJ.d6OqwTd4CaUYdg8N8ZxAHK11Wr9Tf8K",
         "profile_image": "mama.png"
+    },
+    "pedroolivaresjimenez@gmail.com": {
+        "user_id": 3,
+        "name": "Pedro Olivares",
+        "email": "pedroolivaresjimenez@gmail.com",
+        "password": "$2b$12$APVWQOoH3jgOLyEH39./Ke8UVXz2ZDQ9jE2nM/dCfITF2Lf1J6Z/.",
+        "profile_image": "dragonball.jpg"
+    },
+    "Smcdermott2804@gmail.com": {
+        "user_id": 4,
+        "name": "sarah mc dermott",
+        "email": "Smcdermott2804@gmail.com",
+        "password": "$2b$12$FXZeIYMtv.fSsmO/X7zr4eqCDWxwSL1il5/9Vgmf8nB1dJOGlgsg.",
+        "profile_image": "summer_lilostitch_elvis_89aee099.jpeg"
     }
 }

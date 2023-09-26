@@ -31,7 +31,7 @@
 
 
   <!-- Recipe Cards -->
-  <div class="row">
+  <div class="row" id="recipe-groups">
     {% for recipe in recipes %}
     <div class="col-12 col-md-6 col-xl-4 mb-4 ">
       <div class="card recipe-card border border-black rounded-2" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
