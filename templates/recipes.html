@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container recipe-container rounded-5">
+<div class="container recipe-container border border-dark rounded-5">
   <!-- Page Heading -->
   <h2 class="text-center fs-1 fw-bolder mb-3 mt-4 text-uppercase">Recipes</h2>
 
-  <div class="container border border-4 rounded-5 mb-4 recipe_filters_conteiner">
+  <div class="container border border-dark rounded-5 mb-4 recipe_filters_conteiner">
       <!-- Filter by Difficulty -->
     <div class="mb-3 mt-2 pt-2 recipe_filters_content">
       <label class="mb-2" for="difficulty-filter">Filter by Difficulty:</label>
-      <select id="difficulty-filter" class="form-select">
+      <select id="difficulty-filter" class="form-select border border-black rounded-2">
         <option value="all">All</option>
         <option value="easy">Easy</option>
         <option value="intermediate">Intermediate</option>
@@ -20,7 +20,7 @@
     <!-- Filter by Category -->
     <div class="mb-5 recipe_filters_content">
       <label class="mb-2" for="category-filter">Filter by Category:</label>
-      <select id="category-filter" class="form-select">
+      <select id="category-filter" class="form-select border border-black rounded-2">
         <option value="all">All</option>
         <option value="Starter">Starter</option>
         <option value="Main">Main</option>
@@ -34,8 +34,8 @@
   <div class="row">
     {% for recipe in recipes %}
     <div class="col-12 col-md-6 col-xl-4 mb-4 ">
-      <div class="card recipe-card border border-3 rounded-3" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
-      <img src="{{ url_for('static', filename='img/recipes/' + recipe.image_filename) }}" class="card-img-top" alt="Recipe Image">
+      <div class="card recipe-card border border-black rounded-2" data-category="{{ recipe.category }}" data-difficulty="{{ recipe.difficulty }}">
+      <img src="{{ url_for('static', filename='img/recipes/' + recipe.image_filename) }}" class="card-img-top border border-black rounded-2" alt="Recipe Image">
         <div class="card-body">
           <h5 class="card-title text-center text-uppercase fw-bold my-3">{{ recipe.name }}</h5>
           <p class="card-text text-center">Category: <span class="fw-bold fs-4">{{ recipe.category }}</span> <br> Difficulty: <span class="fw-bold fs-4">{{ recipe.difficulty }}</span></p>
