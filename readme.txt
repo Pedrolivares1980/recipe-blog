@@ -41,3 +41,8 @@ The app is structured as follows:
 * `templates`: The Jinja2 templates used by the app.
 * `static`: The static files used by the app.
 * `data`: The data files used by the app.
+
+
+The web app is deploy it in render.com:
+
+https://recbook.onrender.com
