@@ -1,6 +1,9 @@
  # Recipe App
 
 This is a recipe blog app that allows users to register, login, create and delete recipes, and contact the site admins. It is built using Flask, and .JSON files for the data. This project is the module 3 Python assesment for the course "Full Stack Software Development" of UCDPA.
+The web app is deploy it in render.com:
+
+https://recbook.onrender.com
 
 ## Setup
 
@@ -41,8 +44,3 @@ The app is structured as follows:
 * `templates`: The Jinja2 templates used by the app.
 * `static`: The static files used by the app.
 * `data`: The data files used by the app.
-
-
-The web app is deploy it in render.com:
-
-https://recbook.onrender.com
