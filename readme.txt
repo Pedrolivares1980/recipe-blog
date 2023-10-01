@@ -39,8 +39,3 @@ The app is structured as follows:
 * `functions.py`: Contains the functions used by the app.
 * `templates`: The Jinja2 templates used by the app.
 * `static`: The static files used by the app.
-
-## Contributing
-
-Contributions to the app are welcome! Please fork the repository and submit a pull request.
-
