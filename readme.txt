@@ -26,7 +26,7 @@ python app.py
 
 The app has the following features:
 
-* User registration and login
+* User registration, login and delete account
 * Recipe creation, editing, and deletion
 * Contact form
 * Recipes page
@@ -37,5 +37,7 @@ The app is structured as follows:
 
 * `app.py`: The main Flask app file.
 * `functions.py`: Contains the functions used by the app.
+* `test_functions.py`: Contains the tests for functions.py.
 * `templates`: The Jinja2 templates used by the app.
 * `static`: The static files used by the app.
+* `data`: The data files used by the app.

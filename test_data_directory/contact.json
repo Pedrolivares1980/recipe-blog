@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Sender 1",
+        "email": "sender1@example.com",
+        "comment": "Message 1"
+    },
+    {
+        "name": "Sender 2",
+        "email": "sender2@example.com",
+        "comment": "Message 2"
+    }
+]

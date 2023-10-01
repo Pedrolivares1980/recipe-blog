@@ -65,16 +65,3 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-
-// document.addEventListener("DOMContentLoaded", function() {
-//   // Add an event listener to the delete account button
-//   const deleteAccountButton = document.getElementById("delete-account-btn");
-//   if (deleteAccountButton) {
-//       deleteAccountButton.addEventListener("click", function() {
-//           if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
-//               // If the user confirms, redirect to the delete account route
-//               window.location.href = "/delete_account";
-//           }
-//       });
-//   }
-// });

@@ -1,0 +1,36 @@
+[
+    {
+        "user_id": "test@test.com",
+        "id": 1,
+        "name": "test",
+        "category": "Main",
+        "difficulty": "Easy",
+        "ingredients": [
+            "test",
+            "test",
+            "test"
+        ],
+        "instructions": [
+            "test",
+            "test"
+        ],
+        "image_filename": "test.webp"
+    },
+    {
+        "user_id": "test2@test.com",
+        "id": 2,
+        "name": "test2",
+        "category": "Main",
+        "difficulty": "Easy",
+        "ingredients": [
+            "test2",
+            "test2",
+            "test2"
+        ],
+        "instructions": [
+            "test2",
+            "test2"
+        ],
+        "image_filename": "test2.webp"
+    }
+]
